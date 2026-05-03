@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>GoldenSide — Press Kit 2026 · Underground Era</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── PROGRESS FONT (local, igual que styles.css) ── */
+    @font-face {
+      font-family: 'Progress';
+      src: url('assets/fonts/progress_3/PROGRESS PERSONAL USE.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* ── DESIGN TOKENS — idénticos a styles.css ── */
+    :root {
+      --noir:     #0A0A0A;
+      --carbon:   #1A1A1A;
+      --asphalt:  #2D2D2D;
+      --concrete: #4A4A4A;
+      --smoke:    #8A8A8A;
+      --bone:     #E8E4DF;
+      --chalk:    #F5F2ED;
+      --blood:    #C41E1E;
+      --ember:    #8B1A1A;
+      --gold:     #D4A843;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #2A2A2A; font-family: 'EB Garamond', Georgia, serif; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── PÁGINA — A4 LANDSCAPE ── */
+    .page {
+      width: 297mm;
+      height: 210mm;
+      position: relative;
+      overflow: hidden;
+      background: var(--noir);
+      color: var(--chalk);
+      page-break-after: always;
+      break-after: page;
+    }
+    @media screen {
+      .page { margin: 24px auto; box-shadow: 0 10px 56px rgba(0,0,0,0.85); }
+    }
+    @media print {
+      body { background: none; margin: 0; }
+      .page { margin: 0; box-shadow: none; }
+      * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    }
+    @page { size: A4 landscape; margin: 0; }
+
+    /* ── GRAIN OVERLAY ── */
+    .grain {
+      position: absolute; inset: 0;
+      pointer-events: none; z-index: 90; opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23g)'/%3E%3C/svg%3E");
+    }
+
+    /* ── NÚMERO DE PÁGINA ── */
+    .pn {
+      position: absolute; bottom: 15px; right: 28px;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 7pt; color: var(--concrete);
+      letter-spacing: 0.16em; text-transform: uppercase; z-index: 95;
+    }
+
+    /* ── SECTION LABEL (igual al web: .section-label) ── */
+    .lbl {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase; letter-spacing: 0.35em;
+      font-size: 8.5pt; color: var(--blood);
+      position: relative; padding-left: 24px; display: block;
+    }
+    .lbl::before {
+      content: ''; position: absolute; left: 0; top: 50%;
+      width: 16px; height: 1px; background: var(--blood);
+    }
+    .lbl--light { color: rgba(245,242,237,0.88); }
+    .lbl--light::before { background: rgba(245,242,237,0.65); }
+
+
+    /* ══════════════════════════════════════════
+       P1 — PORTADA / HERO
+       ══════════════════════════════════════════ */
+    .p1__bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(to bottom,
+          rgba(10,10,10,0.48) 0%,
+          rgba(10,10,10,0.25) 35%,
+          rgba(10,10,10,0.52) 70%,
+          rgba(10,10,10,0.88) 100%
+        ),
+        url('assets/images/GoldenSideLandscape.jpg');
+      background-size: cover; background-position: center; z-index: 0;
+    }
+
+    .p1__isotipo-wrap {
+      position: absolute; top: 38%; left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10; opacity: 0.85;
+    }
+    .p1__isotipo { width: 64px; height: 64px; object-fit: contain; display: block; }
+
+    .p1__content {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 0 44px 34px; text-align: center;
+    }
+
+    .p1__wordmark {
+      font-family: 'Progress', 'Oswald', sans-serif;
+      font-size: 54pt; letter-spacing: 0.18em;
+      color: var(--chalk); text-transform: uppercase;
+      line-height: 1; margin-bottom: 10px;
+      text-shadow: 0 2px 28px rgba(0,0,0,0.6);
+    }
+
+    .p1__tagline {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 12.5pt; color: var(--bone);
+      letter-spacing: 0.05em; margin-bottom: 18px; opacity: 0.88;
+    }
+
+    .p1__rule { width: 30px; height: 1px; background: var(--blood); margin: 0 auto 14px; }
+
+    .p1__presskit {
+      font-family: 'Oswald', sans-serif; font-size: 9pt;
+      letter-spacing: 0.48em; color: rgba(245,242,237,0.82);
+      text-transform: uppercase; margin-bottom: 5px;
+    }
+
+    .p1__era {
+      font-family: 'IBM Plex Mono', monospace; font-size: 8pt;
+      letter-spacing: 0.26em; color: var(--smoke); margin-bottom: 24px;
+    }
+
+    .p1__footer {
+      width: 100%; display: flex; justify-content: space-between;
+      padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .p1__footer span {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7pt;
+      color: var(--bone); letter-spacing: 0.10em;
+    }
+
+
+    /* ══════════════════════════════════════════
+       P2 — MANIFIESTO / THE UNDERGROUND IS OPEN
+       Igual que la web: #underground-open
+       ══════════════════════════════════════════ */
+    .p2__bg {
+      position: absolute; inset: 0;
+      background-image: url('assets/images/mask.png');
+      background-size: cover; background-position: center; z-index: 0;
+    }
+
+    .p2__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(90deg,
+          rgba(0,0,0,0.86) 0%,
+          rgba(0,0,0,0.52) 38%,
+          rgba(0,0,0,0.18) 52%,
+          rgba(196,30,30,0.24) 68%,
+          rgba(139,26,26,0.62) 100%
+        ),
+        linear-gradient(180deg,
+          rgba(0,0,0,0.50) 0%,
+          rgba(0,0,0,0.12) 40%,
+          rgba(0,0,0,0.50) 100%
+        );
+    }
+
+    .p2__inner {
+      position: absolute; inset: 0; z-index: 2;
+      display: grid; grid-template-columns: 44fr 56fr;
+      align-items: center;
+    }
+
+    .p2__left { /* atmospheric — la imagen respira */ }
+
+    .p2__right {
+      padding: 32px 50px 32px 30px;
+      display: flex; flex-direction: column; gap: 13px;
+    }
+
+    .p2__title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 28pt; line-height: 0.95; letter-spacing: 0.03em;
+      color: var(--chalk); text-transform: uppercase;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.65);
+      margin-top: 10px;
+    }
+
+    .p2__body {
+      font-family: 'EB Garamond', Georgia, serif;
+      color: rgba(245,242,237,0.94); font-size: 10.5pt; line-height: 1.72;
+      display: flex; flex-direction: column; gap: 9px;
+      text-shadow: 0 1px 10px rgba(0,0,0,0.5);
+    }
+
+    .p2__close {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 11pt; color: var(--chalk); line-height: 1.68;
+      border-left: 2px solid rgba(245,242,237,0.55);
+      padding-left: 16px; margin-top: 4px;
+    }
+
+
+    /* ══════════════════════════════════════════
+       P3 — QUIÉNES SOMOS
+       Fondo: band-photo-2.jpg — pantalla completa
+       Contenido en dos columnas sobre overlay
+       ══════════════════════════════════════════ */
+    .p3__bg {
+      position: absolute; inset: 0;
+      background-image: url('assets/images/band-photo-2.jpg');
+      background-size: cover; background-position: center top; z-index: 0;
+    }
+
+    .p3__overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        160deg,
+        rgba(10,10,10,0.86) 0%,
+        rgba(10,10,10,0.68) 45%,
+        rgba(10,10,10,0.80) 100%
+      );
+    }
+
+    .p3__inner {
+      position: absolute; inset: 0; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+
+    .p3__left {
+      padding: 28px 22px 28px 44px;
+      display: flex; flex-direction: column;
+      justify-content: center; gap: 14px;
+    }
+
+    .p3__right {
+      padding: 28px 44px 28px 22px;
+      display: flex; flex-direction: column;
+      justify-content: center; gap: 14px;
+      border-left: 1px solid rgba(196,30,30,0.30);
+    }
+
+    .p3__bio {
+      font-family: 'EB Garamond', serif; font-size: 10.5pt;
+      line-height: 1.75; color: var(--bone);
+      margin-top: 10px;
+    }
+
+    .p3__origin {
+      font-family: 'EB Garamond', serif; font-size: 9.5pt;
+      line-height: 1.68; color: rgba(232,228,223,0.75);
+      font-style: italic;
+    }
+
+    .p3__meta {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt;
+      color: var(--white); display: flex; flex-wrap: wrap; gap: 0;
+    }
+    .p3__meta span::after { content: ' ·'; color: var(--concrete); margin: 0 6px; }
+    .p3__meta span:last-child::after { content: ''; }
+
+    .p3__member { display: flex; flex-direction: column; gap: 4px; }
+
+    .p3__member-name {
+      font-family: 'Oswald', sans-serif; font-size: 13pt;
+      font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--chalk);
+    }
+    .p3__member-role {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt;
+      color: var(--blood); letter-spacing: 0.10em;
+      text-transform: uppercase;
+    }
+    .p3__member-bio {
+      font-family: 'EB Garamond', serif; font-size: 10pt;
+      color: var(--bone); line-height: 1.60;
+    }
+
+    .p3__divider { height: 1px; background: rgba(196,30,30,0.30); }
+
+    .p3__music-label {
+      font-family: 'Oswald', sans-serif; font-size: 8.5pt;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--blood);
+      position: relative; padding-left: 24px;
+    }
+    .p3__music-label::before {
+      content: ''; position: absolute; left: 0; top: 50%;
+      width: 16px; height: 1px; background: var(--blood);
+    }
+    .p3__music-text {
+      font-family: 'EB Garamond', serif; font-size: 10pt;
+      line-height: 1.65; color: var(--bone); margin-top: 6px;
+    }
+
+
+    /* ══════════════════════════════════════════
+       P4 — HIGHLIGHTS + ENLACES DE INTERÉS
+       Fondo: #202020
+       ══════════════════════════════════════════ */
+    .p4__inner {
+      position: absolute; inset: 0;
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+    .p4__header {
+      grid-column: 1 / -1;
+      padding: 22px 44px 0;
+    }
+
+    .p4__left {
+      padding: 14px 18px 22px 44px;
+      display: flex; flex-direction: column; gap: 11px;
+    }
+
+    .p4__right {
+      padding: 14px 44px 22px 18px;
+      display: flex; flex-direction: column; gap: 10px;
+      border-left: 1px solid var(--asphalt);
+    }
+
+    .p4__live-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 12pt; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--chalk);
+    }
+
+    .p4__live {
+      width: 100%; aspect-ratio: 16 / 9;
+      position: relative; overflow: hidden;
+      border: 1px solid var(--asphalt); flex-shrink: 0;
+    }
+    .p4__live-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+        url('assets/images/band-photo-1.jpg');
+      background-size: cover; background-position: center;
+    }
+    .p4__live-center {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+    }
+    .p4__play-btn {
+      width: 40px; height: 40px;
+      border: 1.5px solid rgba(245,242,237,0.68);
+      border-radius: 50%; position: relative; flex-shrink: 0;
+    }
+    .p4__play-btn::after {
+      content: ''; position: absolute;
+      top: 50%; left: 55%; transform: translate(-50%, -50%);
+      border-style: solid; border-width: 7px 0 7px 12px;
+      border-color: transparent transparent transparent var(--chalk);
+    }
+    .p4__live-url {
+      font-family: 'IBM Plex Mono', monospace; font-size: 6.5pt;
+      color: var(--bone); letter-spacing: 0.06em;
+    }
+
+    .p4__col-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 10pt; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--chalk);
+    }
+
+    .p4__list {
+      list-style: none; display: flex; flex-direction: column; gap: 7px;
+    }
+    .p4__list li {
+      font-family: 'EB Garamond', serif; font-size: 10pt;
+      color: var(--chalk); line-height: 1.38;
+      padding-left: 18px; position: relative;
+    }
+    .p4__list li::before {
+      content: '—'; position: absolute; left: 0;
+      color: var(--blood); font-family: 'IBM Plex Mono', monospace;
+      font-size: 7pt; top: 2px;
+    }
+
+    .p4__links-grid {
+      display: flex; flex-direction: column; gap: 7px;
+    }
+
+    .p4__link-item {
+      display: flex; flex-direction: column; gap: 2px;
+      padding: 8px 12px;
+      border: 1px solid var(--asphalt);
+      background: rgba(10,10,10,0.50);
+    }
+    .p4__link-label {
+      font-family: 'Oswald', sans-serif; font-size: 8pt;
+      letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk);
+    }
+    .p4__link-url {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7pt;
+      color: var(--blood); letter-spacing: 0.03em;
+      word-break: break-all;
+    }
+
+
+    /* ══════════════════════════════════════════
+       P5 — CONTACTO (página limpia y centrada)
+       ══════════════════════════════════════════ */
+    .p5__bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(180deg,
+          rgba(10,10,10,0.82) 0%,
+          rgba(10,10,10,0.55) 38%,
+          rgba(10,10,10,0.88) 100%
+        ),
+        url('assets/images/band-photo-2.jpg');
+      background-size: cover; background-position: center; z-index: 0;
+    }
+
+    .p5__inner {
+      position: absolute; inset: 0; z-index: 2;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 26px 64px; text-align: center; gap: 0;
+    }
+
+    .p5__wordmark {
+      font-family: 'Progress', 'Oswald', sans-serif;
+      font-size: 34pt; letter-spacing: 0.20em;
+      color: var(--chalk); text-transform: uppercase;
+      line-height: 1; margin-bottom: 8px;
+    }
+
+    .p5__tagline {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 11pt; color: var(--smoke);
+      margin-bottom: 18px; letter-spacing: 0.03em;
+    }
+
+    .p5__rule { width: 36px; height: 1px; background: var(--blood); margin: 0 auto 20px; }
+
+    .p5__grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 18px 52px; width: 100%; max-width: 580px;
+      text-align: left; margin-bottom: 18px;
+    }
+
+    .p5__group { display: flex; flex-direction: column; gap: 6px; }
+
+    .p5__group-label {
+      font-family: 'Oswald', sans-serif; font-size: 8.5pt;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--blood); margin-bottom: 2px;
+    }
+
+    .p5__email {
+      font-family: 'Oswald', sans-serif; font-size: 11.5pt;
+      letter-spacing: 0.06em; color: var(--chalk);
+    }
+
+    .p5__line {
+      font-family: 'IBM Plex Mono', monospace; font-size: 8pt;
+      color: var(--bone); letter-spacing: 0.04em;
+    }
+
+    .p5__line--muted {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt;
+      color: var(--smoke); letter-spacing: 0.04em;
+    }
+
+    .p5__social-row {
+      display: flex; flex-wrap: wrap; gap: 7px;
+      justify-content: center; margin-bottom: 16px;
+    }
+
+    .p5__badge {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7.5pt;
+      color: var(--bone); letter-spacing: 0.04em;
+      padding: 5px 13px; border: 1px solid var(--asphalt);
+    }
+
+    .p5__assets {
+      font-family: 'IBM Plex Mono', monospace; font-size: 7pt;
+      color: var(--smoke); letter-spacing: 0.07em;
+      text-align: center; line-height: 1.90; margin-bottom: 16px;
+    }
+
+    .p5__footer-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      width: 100%; border-top: 1px solid rgba(255,255,255,0.10);
+      padding-top: 12px;
+    }
+    .p5__copyright {
+      font-family: 'IBM Plex Mono', monospace; font-size: 6.5pt;
+      color: var(--concrete); letter-spacing: 0.10em;
+    }
+    .p5__claim {
+      font-family: 'EB Garamond', serif; font-style: italic;
+      font-size: 8.5pt; color: var(--smoke);
+    }
+
+  </style>
+</head>
+<body>
+
+
+<!-- ══════════════════════════════════════════════════════
+     P1 — PORTADA / HERO
+     ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="p1__bg"></div>
+  <div class="grain"></div>
+
+  <div class="p1__isotipo-wrap">
+    <img src="assets/images/isotipo.png" alt="" class="p1__isotipo">
+  </div>
+
+  <div class="p1__content">
+    <p class="p1__wordmark">GOLDENSIDE</p>
+    <p class="p1__tagline">"make your interior loud"</p>
+    <div class="p1__rule"></div>
+    <p class="p1__presskit">Press &nbsp; Kit &nbsp; 2026</p>
+    <p class="p1__era">Underground &nbsp; Era</p>
+    <div class="p1__footer">
+      <a href="https://wearegoldenside.com">wearegoldenside.com</a>
+      <span>Madrid · Desde 2020 · Rock Electrónico / Indie Alternativo</span>
+      <span>@wearegoldenside</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     P2 — MANIFIESTO / THE UNDERGROUND IS OPEN
+     Texto fiel al #underground-open del index.html
+     ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="p2__bg"></div>
+  <div class="p2__overlay"></div>
+  <div class="grain"></div>
+
+  <div class="p2__inner">
+    <div class="p2__left"></div>
+
+    <div class="p2__right">
+      <span class="lbl lbl--light">Manifiesto</span>
+
+      <h2 class="p2__title">The Underground<br>Is Open</h2>
+
+      <div class="p2__body">
+        <p>Las redes sociales nos acostumbraron a mirar máscaras: vidas perfectas, rostros perfectos, proyectos perfectos, personas y estilos de vida inalcanzables.</p>
+        <p>Pero esa no es la verdadera historia.</p>
+        <p>Detrás de cada máscara también hay un factor humano: personas que sienten, dudan, se cansan, se levantan, se equivocan, celebran, atraviesan ansiedad, miedo, alegría, presión, cambios y momentos que no siempre se ven desde afuera.</p>
+        <p>Esta nueva etapa nace de la necesidad de contar lo que vivimos como personas. Nuestras canciones vienen de las emociones que nos atraviesan, de las experiencias que compartimos y de la necesidad de acercarnos a nosotros mismos.</p>
+        <p>Este capítulo abre una puerta más cruda, más honesta y más real. Donde la música no intenta fingir perfección, sino acompañar a quienes también están pasando por algo.</p>
+      </div>
+
+      <p class="p2__close">La verdadera historia se cuenta cuando la máscara pierde fuerza y aparece lo humano.</p>
+    </div>
+  </div>
+
+  <span class="pn">02 · 05</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     P3 — QUIÉNES SOMOS
+     Fondo completo: band-photo-2.jpg
+     Contenido: quienesSomos.md
+     ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="p3__bg"></div>
+  <div class="p3__overlay"></div>
+  <div class="grain"></div>
+
+  <div class="p3__inner">
+
+    <!-- COLUMNA IZQUIERDA: Bio general + Aarón -->
+    <div class="p3__left">
+      <span class="lbl lbl--light">Quiénes Somos</span>
+
+      <p class="p3__bio">GoldenSide es el proyecto musical de Aarón Marfil (ASMA) y Carlos Dalton. Dos artistas venezolanos en Madrid, forjados dentro de la escena alternativa caraqueña, que construyeron aquí un sonido propio: más electrónico, más visual y más personal.</p>
+
+      <p class="p3__origin">Antes de GoldenSide formaron Los Daltónicos, banda caraqueña de indie-rock con actuaciones en la Sala José Félix Ribas del Teatro Teresa Carreño. Esa base de escenario y guitarras sigue viva, transformada, dentro de GoldenSide.</p>
+
+      <div class="p3__divider"></div>
+
+      <!-- La música -->
+      <div>
+        <p class="p3__music-label">La Música</p>
+        <p class="p3__music-text">El sonido se mueve entre el rock electrónico, el indie alternativo, la indietrónica y el pop alternativo. La guitarra funciona como ancla física mientras la producción electrónica abre un espacio más atmosférico e introspectivo. Letras que hablan del deseo, el miedo, la búsqueda interior y la transformación — primero en inglés, ahora también en español como forma de acercar el mensaje.</p>
+      </div>
+
+      
+    </div>
+
+    <!-- COLUMNA DERECHA: Carlos + La música -->
+    <div class="p3__right">
+
+      <!-- Aarón -->
+      <div class="p3__member">
+        <p class="p3__member-name">ASMA — Aarón Marfil</p>
+        <p class="p3__member-role">Voz · Composición · Producción</p>
+        <p class="p3__member-bio">Vocalista, compositor y productor de GoldenSide. Conecta la interpretación vocal con una escritura emocional centrada en la identidad, la vulnerabilidad y la búsqueda personal. Su voz se mueve entre lo íntimo, lo electrónico y la alta energía.</p>
+      </div>
+
+      <div class="p3__divider"></div>
+      
+      <!-- Carlos -->
+      <div class="p3__member" style="margin-top: 30px;">
+        <p class="p3__member-name">Carlos Dalton</p>
+        <p class="p3__member-role">Guitarra · Coros · Producción</p>
+        <p class="p3__member-bio">Guitarrista, corista y productor de GoldenSide. Construye gran parte del carácter sonoro del proyecto mezclando guitarras con texturas electrónicas, capas atmosféricas y una estética más oscura, física y cinematográfica. Su rol conecta el sonido del dúo con la identidad underground del proyecto.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <span class="pn">03 · 05</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     P4 — HIGHLIGHTS + ENLACES DE INTERÉS
+     Fondo: #202020 · Sin shows
+     ══════════════════════════════════════════════════════ -->
+<div class="page" style="background:#1E1E1E;">
+  <div class="grain"></div>
+
+  <div class="p4__inner">
+    <div class="p4__header">
+      <span class="lbl">Highlights · 2022–2026</span>
+    </div>
+
+    <!-- COLUMNA IZQUIERDA: Video + Highlights -->
+    <div class="p4__left">
+      <p class="p4__live-heading">GoldenSide en vivo</p>
+
+      <div class="p4__live">
+        <div class="p4__live-bg"></div>
+        <div class="p4__live-center">
+          <div class="p4__play-btn"></div>
+          <a href="https://www.youtube.com/watch?v=vjM6bovVxJw" class="p4__live-url">youtube.com/watch?v=vjM6bovVxJw</a>
+        </div>
+      </div>
+
+      <p class="p4__col-title">Logros relevantes</p>
+      <ul class="p4__list">
+        <li>"Playing For Keeps" incluido en campaña comercial de Samsung</li>
+        <li>Finalistas y 3.er lugar — Stay Alive Fest Madrid 2026</li>
+        <li>Opening act Gira Tomates Fritos — Sala Nazca (BCN) y Sala Nau (MAD)</li>
+        <li>Presentación en Mercado de Motores Madrid 2026</li>
+        <li>+600.000 reproducciones acumuladas en Spotify</li>
+        <li>"Freedom" premiado — ONED Art / Experimental Film Festival</li>
+        <li>Nominación Premios Pepsi Music</li>
+      </ul>
+    </div>
+
+    <!-- COLUMNA DERECHA: Enlaces de interés -->
+    <div class="p4__right">
+      <p class="p4__col-title">Enlaces de Interés</p>
+
+      <div class="p4__links-grid">
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">Web oficial</span>
+          <a href="https://wearegoldenside.com" class="p4__link-url">wearegoldenside.com</a>
+        </div>
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">Spotify — Página del artista</span>
+          <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" class="p4__link-url">open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi</a>
+        </div>
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">YouTube — Canal</span>
+          <a href="https://www.youtube.com/@wearegoldenside" class="p4__link-url">youtube.com/@wearegoldenside</a>
+        </div>
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">Demons (Acoustic) — Todas las plataformas</span>
+          <a href="https://distrokid.com/hyperfollow/goldenside/demons-acoustic" class="p4__link-url">distrokid.com/hyperfollow/goldenside/demons-acoustic</a>
+        </div>
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">Instagram</span>
+          <a href="https://www.instagram.com/wearegoldenside/" class="p4__link-url">instagram.com/wearegoldenside</a>
+        </div>
+
+        <div class="p4__link-item">
+          <span class="p4__link-label">TikTok</span>
+          <a href="https://www.tiktok.com/@somosgoldenside" class="p4__link-url">tiktok.com/@wearegoldenside</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <span class="pn">04 · 05</span>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     P5 — CONTACTO (página limpia, centrada)
+     ══════════════════════════════════════════════════════ -->
+<div class="page">
+  <div class="p5__bg"></div>
+  <div class="grain"></div>
+
+  <div class="p5__inner">
+
+    <p class="p5__wordmark">GOLDENSIDE</p>
+    <p class="p5__tagline">"make your interior loud"</p>
+    <div class="p5__rule"></div>
+
+    <div class="p5__grid">
+
+      <!-- Contacto principal -->
+      <div class="p5__group">
+        <p class="p5__group-label">Contacto</p>
+        <a href="mailto:wearegoldenside@gmail.com" class="p5__email">wearegoldenside@gmail.com</a>
+        <a href="https://wearegoldenside.com" class="p5__line">wearegoldenside.com</a>
+        <span class="p5__line--muted">Prensa · Booking · Colaboraciones</span>
+      </div>
+
+      <!-- Equipo -->
+      <div class="p5__group">
+        <p class="p5__group-label">Equipo</p>
+        <span class="p5__line">Felipe Trujillo — Dirección Creativa</span>
+        <span class="p5__line">Artes Búho — Management España</span>
+        <span class="p5__line">WAMM — Management Internacional</span>
+      </div>
+
+      <!-- Plataformas -->
+      <div class="p5__group">
+        <p class="p5__group-label">Streaming</p>
+        <span class="p5__line">Spotify · Apple Music · YouTube Music</span>
+        <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" class="p5__line--muted">open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi</a>
+        <a href="https://music.apple.com/us/artist/goldenside/1544040219" class="p5__line--muted">music.apple.com/us/artist/goldenside/1544040219</a>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="p5__group">
+        <p class="p5__group-label">Redes Sociales</p>
+        <a href="https://www.instagram.com/wearegoldenside/" class="p5__line">Instagram — @wearegoldenside</a>
+        <a href="https://www.tiktok.com/@wearegoldenside" class="p5__line">TikTok — @wearegoldenside</a>
+        <a href="https://www.youtube.com/@wearegoldenside" class="p5__line">YouTube — youtube.com/@wearegoldenside</a>
+      </div>
+
+    </div>
+
+    <!-- Social badges -->
+    <div class="p5__social-row">
+      <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" class="p5__badge">Spotify</a>
+      <a href="https://music.apple.com/us/artist/goldenside/1544040219" class="p5__badge">Apple Music</a>
+      <a href="https://www.youtube.com/@wearegoldenside" class="p5__badge">YouTube</a>
+      <a href="https://www.instagram.com/wearegoldenside/" class="p5__badge">Instagram</a>
+      <a href="https://www.tiktok.com/@wearegoldenside" class="p5__badge">TikTok</a>
+      <a href="https://distrokid.com/hyperfollow/goldenside/demons-acoustic" class="p5__badge">DistroKid</a>
+    </div>
+
+    <!-- Press assets -->
+    <p class="p5__assets">
+      PRESS ASSETS DISPONIBLES: Fotos oficiales · Logo · Bio corta · Bio extendida · Rider técnico · Material audiovisual
+    </p>
+
+    <div class="p5__footer-row">
+      <p class="p5__copyright">© 2026 GoldenSide · LiquidGold Records · Todos los derechos reservados · 05 · 05</p>
+      <p class="p5__claim"><em>"make your interior loud"</em></p>
+    </div>
+
+  </div>
+</div>
+
+
+</body>
+</html>
