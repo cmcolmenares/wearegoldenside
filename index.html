@@ -1,638 +1,706 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GoldenSide — Make Your Interior Loud | Indie Pop & Indietronic</title>
-  <meta name="description" content="GoldenSide es un duo de indie pop e indietronic desde Madrid. Musica para los que buscan, para los que no encajan, para los que estan encontrando su lado dorado.">
-  <link rel="canonical" href="https://wearegoldenside.com">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="GoldenSide — Make Your Interior Loud">
-  <meta property="og:description" content="Indie Pop & Indietronic desde Madrid. Dos venezolanos construyendo un sonido que no pide permiso.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://wearegoldenside.com">
-  <meta property="og:image" content="https://wearegoldenside.com/assets/images/Goldenside.png">
-  <meta property="og:locale" content="es_ES">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@wearegoldenside">
-  <meta name="twitter:title" content="GoldenSide — Make Your Interior Loud">
-  <meta name="twitter:image" content="https://wearegoldenside.com/assets/images/Goldenside.png">
-
-  <!-- Favicon -->
-  <link rel="icon" href="./assets/images/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon-180x180.png">
-
-  <!-- Structured Data: MusicGroup -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicGroup",
-    "name": "GoldenSide",
-    "url": "https://wearegoldenside.com",
-    "genre": ["Indie Pop", "Indietronic"],
-    "foundingDate": "2020",
-    "foundingLocation": { "@type": "City", "name": "Madrid" },
-    "description": "Duo de indie pop e indietronic desde Madrid.",
-    "member": [
-      { "@type": "Person", "name": "ASMA", "alternateName": "Aaron Sebastian Marfil" },
-      { "@type": "Person", "name": "Carlos Dalton", "alternateName": "Carlos Manuel Colmenares" }
-    ],
-    "sameAs": [
-      "https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi",
-      "https://www.instagram.com/wearegoldenside/",
-      "https://www.youtube.com/channel/UCMHQQQOY5kMtrRPUtmYefKA",
-      "https://www.tiktok.com/@wearegoldenside"
-    ]
-  }
-  </script>
-
-  <!-- Structured Data: Event -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MusicEvent",
-    "name": "GoldenSide en Mercado de Motores Madrid",
-    "startDate": "2026-04-11T12:30:00+02:00",
-    "location": {
-      "@type": "Place",
-      "name": "Mercado de Motores — Museo del Ferrocarril",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Paseo de las Delicias, 61",
-        "addressLocality": "Madrid",
-        "addressCountry": "ES"
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoldenSide | Indie pop, electro-pop e indietrónica en Madrid</title>
+<meta content="GoldenSide es un dúo venezolano radicado en Madrid que fusiona indie pop, electro-pop e indietrónica con una propuesta visual oscura, emocional y rebelde." name="description"/>
+<meta content="GoldenSide" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta content="#050505" name="theme-color"/>
+<link href="https://wearegoldenside.com/" rel="canonical"/>
+<!-- Open Graph -->
+<meta content="GoldenSide" property="og:site_name"/>
+<meta content="GoldenSide | The Underground is Open" property="og:title"/>
+<meta content="Dúo venezolano en Madrid. Indie pop, electro-pop e indietrónica con una propuesta visual oscura, emocional y rebelde." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://wearegoldenside.com/" property="og:url"/>
+<meta content="https://wearegoldenside.com/assets/images/og-goldenside.jpg" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="GoldenSide, dúo venezolano de indie pop y electro-pop en Madrid." property="og:image:alt"/>
+<meta content="es_ES" property="og:locale"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@wearegoldenside" name="twitter:site"/>
+<meta content="GoldenSide | The Underground is Open" name="twitter:title"/>
+<meta content="Dúo venezolano en Madrid. Indie pop, electro-pop e indietrónica con una propuesta visual oscura, emocional y rebelde." name="twitter:description"/>
+<meta content="https://wearegoldenside.com/assets/images/og-goldenside.jpg" name="twitter:image"/>
+<meta content="GoldenSide, dúo venezolano de indie pop y electro-pop en Madrid." name="twitter:image:alt"/>
+<!-- Favicon + PWA -->
+<link href="./assets/images/favicon.ico" rel="icon" sizes="any"/>
+<link href="./assets/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="./assets/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="./assets/images/favicon-180x180.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="/site.webmanifest" rel="manifest"/>
+<!-- Structured Data: MusicGroup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "@id": "https://wearegoldenside.com/#band",
+  "name": "GoldenSide",
+  "url": "https://wearegoldenside.com",
+  "genre": [
+    "Indie Pop",
+    "Indietronic",
+    "Electro-Pop",
+    "Alternative"
+  ],
+  "foundingDate": "2020",
+  "foundingLocation": {
+    "@type": "City",
+    "name": "Madrid",
+    "addressCountry": "ES"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Madrid",
+    "addressCountry": "ES"
+  },
+  "email": "wearegoldenside@gmail.com",
+  "description": "Dúo venezolano radicado en Madrid que fusiona indie pop, electro-pop e indietrónica.",
+  "member": [
+    {
+      "@type": "Person",
+      "name": "ASMA",
+      "alternateName": "Aaron Sebastian Marfil"
+    },
+    {
+      "@type": "Person",
+      "name": "Carlos Dalton",
+      "alternateName": "Carlos Manuel Colmenares"
+    }
+  ],
+  "sameAs": [
+    "https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi",
+    "https://www.instagram.com/wearegoldenside/",
+    "https://www.youtube.com/@wearegoldenside",
+    "https://www.tiktok.com/@somosgoldenside",
+    "https://www.facebook.com/goldensidemusic",
+    "https://twitter.com/wearegoldenside"
+  ],
+  "image": "https://wearegoldenside.com/assets/images/og-goldenside.jpg",
+  "alternateName": [
+    "GØLDENSIDE",
+    "Golden Side"
+  ]
+}
+</script>
+<!-- Structured Data: WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://wearegoldenside.com/#website",
+  "url": "https://wearegoldenside.com/",
+  "name": "GoldenSide",
+  "description": "Sitio oficial de GoldenSide — dúo independiente venezolano radicado en Madrid.",
+  "inLanguage": "es-ES",
+  "publisher": { "@id": "https://wearegoldenside.com/#band" }
+}
+</script>
+<!-- Structured Data: Catálogo (MusicRecording x8) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Catálogo GoldenSide",
+  "itemListOrder": "https://schema.org/ItemListOrderDescending",
+  "itemListElement": [
+    {
+      "@type": "ListItem", "position": 1,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Demons (Acoustic)",
+        "datePublished": "2026-03",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://distrokid.com/hyperfollow/goldenside/demons-acoustic",
+        "image": "https://wearegoldenside.com/assets/images/demons_acoustic_cover.jpg"
       }
     },
-    "performer": { "@type": "MusicGroup", "name": "GoldenSide" },
-    "isAccessibleForFree": true,
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "EUR",
-      "url": "https://www.eventbrite.es/e/entradas-mercado-de-motores-madrid-11-y-12-de-abril-entrada-gratis-1984720303856",
-      "availability": "https://schema.org/InStock"
+    {
+      "@type": "ListItem", "position": 2,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Mis Demonios",
+        "datePublished": "2024",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "es",
+        "url": "https://distrokid.com/hyperfollow/goldenside/mis-demonios-feat-boston-rex",
+        "image": "https://wearegoldenside.com/assets/images/mis_demonios_cover.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 3,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Playing For Keeps",
+        "datePublished": "2023",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://orcd.co/goldenside-playing-for-keeps",
+        "image": "https://wearegoldenside.com/assets/images/playing_for_keeps_cover.png"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 4,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Babe",
+        "datePublished": "2023",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://ffm.to/babe-goldenside",
+        "image": "https://wearegoldenside.com/assets/images/babe_cover.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 5,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Demons",
+        "datePublished": "2023",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://ffm.to/goldenside-demons",
+        "image": "https://wearegoldenside.com/assets/images/demons_cover.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 6,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "Freedom",
+        "datePublished": "2023",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://ffm.to/goldenside-freedom",
+        "image": "https://wearegoldenside.com/assets/images/freedom_cover.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 7,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "R U Different?",
+        "datePublished": "2022",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://ffm.to/goldenside-ru-different",
+        "image": "https://wearegoldenside.com/assets/images/ru_different_cover.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 8,
+      "item": {
+        "@type": "MusicRecording",
+        "name": "New Beginning",
+        "datePublished": "2022",
+        "byArtist": { "@id": "https://wearegoldenside.com/#band" },
+        "inLanguage": "en",
+        "url": "https://ffm.to/goldenside-new-beginning",
+        "image": "https://wearegoldenside.com/assets/images/new_beginning_cover.jpg"
+      }
     }
-  }
-  </script>
-
-  <!-- Preload critical fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400&family=Oswald:wght@400;600;700&family=Special+Elite&display=swap" rel="stylesheet">
-
-  <!-- Sitemap -->
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css">
+  ]
+}
+</script>
+<!-- Preconnect (fonts + embeds) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://www.youtube.com" rel="preconnect"/>
+<link href="https://i.ytimg.com" rel="preconnect"/>
+<link href="https://open.spotify.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&amp;family=EB+Garamond:ital,wght@0,400;1,400&amp;family=IBM+Plex+Mono:wght@400&amp;family=Oswald:wght@400;600;700&amp;family=Special+Elite&amp;display=swap" rel="stylesheet"/>
+<!-- Preload hero image (LCP optimization) -->
+<link as="image" fetchpriority="high" href="./assets/images/GoldenSideLandscape.jpg" media="(min-width: 769px)" rel="preload"/>
+<link as="image" fetchpriority="high" href="./assets/images/GoldenSidePortrait.jpg" media="(max-width: 768px)" rel="preload"/>
+<!-- Sitemap -->
+<link href="/sitemap.xml" rel="sitemap" type="application/xml"/>
+<!-- Stylesheet -->
+<link href="css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <!-- ════════ GRAIN + SCANLINES OVERLAYS ════════ -->
-  <div class="grain" aria-hidden="true">
-    <svg width="100%" height="100%"><filter id="grain-filter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#grain-filter)"/></svg>
-  </div>
-  <div class="scanlines" aria-hidden="true"></div>
-
-  <!-- ════════ CUSTOM CURSOR (desktop) ════════ -->
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
-
-  <!-- ════════ HEADER ════════ -->
-  <header class="header" id="header" role="banner">
-    <a href="#hero" class="header__logo" aria-label="GoldenSide - Inicio">
-      <!-- Inline SVG logo with PATH replacing O -->
-      <svg class="header__logo-svg" viewBox="0 0 220 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <text x="0" y="17" fill="var(--chalk)" font-family="'Progress', sans-serif" font-weight="700" font-size="18" letter-spacing="4" textLength="220">GOLDENSIDE</text>
-      </svg>
-      <img src="./assets/images/isotipo.png" alt="" class="header__isotipo" aria-hidden="true">
-    </a>
-
-    <nav class="header__nav" id="main-nav" aria-label="Navegacion principal">
-      <a href="#underground-open" class="header__link">The Underground</a>
-      <a href="#shows" class="header__link">Shows</a>
-      <a href="#underground" class="header__link">Manifiesto</a>
-      <a href="#musica" class="header__link">Música</a>
-      <a href="#about" class="header__link">Nosotros</a>
-      <a href="#contacto" class="header__link">Contacto</a>
-    </nav>
-
-    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
-  </header>
-
-  <!-- ════════ MOBILE MENU ════════ -->
-  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Menu de navegacion" aria-hidden="true">
-    <nav class="mobile-menu__nav">
-      <a href="#underground-open" class="mobile-menu__link">The Underground</a>
-      <a href="#shows" class="mobile-menu__link">Shows</a>
-      <a href="#underground" class="mobile-menu__link">Manifiesto</a>
-      <a href="#musica" class="mobile-menu__link">Música</a>
-      <a href="#about" class="mobile-menu__link">Nosotros</a>
-      <a href="#contacto" class="mobile-menu__link">Contacto</a>
-    </nav>
-    <div class="mobile-menu__social">
-      <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" target="_blank" rel="noopener" aria-label="Spotify">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/wearegoldenside/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@wearegoldenside" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-      </a>
-    </div>
-  </div>
-
-  <main>
-    <!-- ════════ 1. HERO ════════ -->
-    <section class="hero" id="hero" aria-label="Inicio">
-      <div class="hero__bg" aria-hidden="true"></div>
-
-      <div class="hero__path" aria-hidden="true">
+<!-- ════════ GRAIN + SCANLINES OVERLAYS ════════ -->
+<div aria-hidden="true" class="grain">
+<svg height="100%" width="100%"><filter id="grain-filter"><feturbulence basefrequency="0.85" numoctaves="3" stitchtiles="stitch" type="fractalNoise"></feturbulence></filter><rect filter="url(#grain-filter)" height="100%" width="100%"></rect></svg>
+</div>
+<div aria-hidden="true" class="scanlines"></div>
+<!-- ════════ CUSTOM CURSOR (desktop) ════════ -->
+<div aria-hidden="true" class="cursor-dot"></div>
+<div aria-hidden="true" class="cursor-ring"></div>
+<!-- ════════ HEADER ════════ -->
+<header class="header" id="header" role="banner">
+<a aria-label="GoldenSide - Inicio" class="header__logo" href="#hero">
+<!-- Inline SVG logo with PATH replacing O -->
+<svg aria-hidden="true" class="header__logo-svg" fill="none" viewbox="0 0 220 22" xmlns="http://www.w3.org/2000/svg">
+<text fill="var(--chalk)" font-family="'Progress', sans-serif" font-size="18" font-weight="700" letter-spacing="4" textlength="220" x="0" y="17">GOLDENSIDE</text>
+</svg>
+<img alt="" aria-hidden="true" class="header__isotipo" src="./assets/images/isotipo.png"/>
+</a>
+<nav aria-label="Navegación principal" class="header__nav" id="main-nav">
+<a class="header__link" href="#redes">The Underground</a>
+<a class="header__link" href="#shows">Shows</a>
+<a class="header__link" href="#about">Nosotros</a>
+<a class="header__link" href="#about-2">Sonido</a>
+<a class="header__link" href="#musica">Música</a>
+<a class="header__link" href="#contacto">Contacto</a>
+<a class="header__link" download="" href="./GoldenSide-PressKit-2026.pdf">Press Kit</a></nav>
+<button aria-controls="mobile-menu" aria-expanded="false" aria-label="Abrir menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</header>
+<!-- ════════ MOBILE MENU ════════ -->
+<div aria-hidden="true" aria-label="Menu de navegacion" class="mobile-menu" id="mobile-menu" role="dialog">
+<nav class="mobile-menu__nav">
+<a class="mobile-menu__link" href="#redes">The Underground</a>
+<a class="mobile-menu__link" href="#shows">Shows</a>
+<a class="mobile-menu__link" href="#about">Nosotros</a>
+<a class="mobile-menu__link" href="#about-2">Sonido</a>
+<a class="mobile-menu__link" href="#musica">Música</a>
+<a class="mobile-menu__link" href="#contacto">Contacto</a>
+<a class="mobile-menu__link" download="" href="./GoldenSide-PressKit-2026.pdf">Press Kit</a></nav>
+<div class="mobile-menu__social">
+<a aria-label="Spotify" href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/wearegoldenside/" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@wearegoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
+</a>
+</div>
+</div>
+<main>
+<!-- ════════ 1. HERO ════════ -->
+<section aria-label="Inicio" class="hero" id="hero">
+<div aria-hidden="true" class="hero__bg"></div>
+<!-- <div class="hero__path" aria-hidden="true">
         <img src="./assets/images/isotipo.png" alt="" class="hero__path-logo">
-      </div>
-
-      <div class="hero__content">
-        <h1 class="progress__title" aria-label="GoldenSide">
-          <span class="progress__letter" style="--i:0">G</span><!--
-          --><span class="progress__letter" style="--i:1">O</span><!--
-          --><span class="progress__letter" style="--i:2">L</span><!--
-          --><span class="progress__letter" style="--i:3">D</span><!--
-          --><span class="progress__letter" style="--i:4">E</span><!--
-          --><span class="progress__letter" style="--i:5">N</span><!--
-          --><span class="progress__letter" style="--i:6">S</span><!--
-          --><span class="progress__letter" style="--i:7">I</span><!--
-          --><span class="progress__letter" style="--i:8">D</span><!--
-          --><span class="progress__letter" style="--i:9">E</span>
-        </h1>
-
-        <div class="hero__ctas">
-          <a href="https://distrokid.com/hyperfollow/goldenside/mis-demonios-feat-boston-rex" class="cta cta--primary" target="_blank" rel="noopener">Escuchar ahora</a>
-          <a href="#shows" class="cta cta--ghost">Próximos shows</a>
-        </div>
-      </div>
-
-    <div class="glitch-fx" aria-hidden="true"></div>
-    
-    </section>
-
-    <!-- ════════ 2. REDES SOCIALES ════════ -->
-    <section class="social-bar" id="redes" aria-label="Redes sociales">
-      <p class="social-bar__label">Síguenos</p>
-      <div class="social-bar__icons" aria-label="Redes sociales">
-        <div class="ticker-inner">
-          <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" class="social-icon" target="_blank" rel="noopener" aria-label="Spotify">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/wearegoldenside/" class="social-icon" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@wearegoldenside" class="social-icon" target="_blank" rel="noopener" aria-label="YouTube">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@wearegoldenside" class="social-icon" target="_blank" rel="noopener" aria-label="TikTok">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/goldensidemusic" class="social-icon" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://twitter.com/wearegoldenside" class="social-icon" target="_blank" rel="noopener" aria-label="X / Twitter">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-        <!-- clones para loop infinito (aria-hidden, tabindex=-1) -->
-          <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          </a>
-          <a href="https://www.instagram.com/wearegoldenside/" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </a>
-          <a href="https://www.youtube.com/@wearegoldenside" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-          </a>
-          <a href="https://www.tiktok.com/@wearegoldenside" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-          </a>
-          <a href="https://www.facebook.com/goldensidemusic" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://twitter.com/wearegoldenside" class="social-icon" target="_blank" rel="noopener" tabindex="-1">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 3. UNDERGROUND IS OPEN ════════ -->
-    <section class="underground-open" id="underground-open" aria-label="The Underground Is Open">
-      <div class="underground-open__bg" aria-hidden="true"></div>
-      <div class="underground-open__overlay" aria-hidden="true"></div>
-      <div class="underground-open__inner">
-        <div class="underground-open__text">
-          <p class="section-label reveal" data-delay="0">Manifiesto</p>
-          <h2 class="underground-open__title reveal" data-delay="1">The Underground<br>Is Open</h2>
-          <div class="underground-open__body">
-            <p class="reveal" data-delay="2">Las redes sociales nos acostumbraron a mirar máscaras: vidas perfectas, rostros perfectos, proyectos perfectos, personas y estilos de vida inalcanzables.</p>
-            <p class="reveal" data-delay="3">Pero esa no es la verdadera historia...</p>
-            <p class="reveal" data-delay="3">Detrás de cada máscara también hay un factor humano: personas que sienten, dudan, se cansan, se levantan, se equivocan, celebran, atraviesan ansiedad, miedo, alegría, presión, cambios y momentos que no siempre se ven desde afuera.</p>
-            <p class="reveal" data-delay="3">Esta nueva etapa nace de la necesidad de contar lo que vivimos como personas. Nuestras canciones vienen de las emociones que nos atraviesan, de las experiencias que compartimos y de la necesidad de acercarnos nosotros mismos.</p>
-            <p class="reveal" data-delay="4">Este capítulo abre una puerta más cruda, más honesta y más real. Donde la música no intenta fingir perfección, sino acompañar a quienes también están pasando por algo.</p>
-            <p class="underground-open__close reveal" data-delay="4">La verdadera historia se cuenta cuando la máscara pierde fuerza y aparece lo humano.</p>
-          </div>
-        </div>
-      </div>
-      <div class="gradient-divider--from-red" aria-hidden="true"></div>
-    </section>
-
-    <!-- ════════ 4. SHOWS ════════ -->
-    <section class="shows" id="shows" aria-label="Proximos shows">
-      <div class="shows__inner">
-        <p class="section-label reveal" data-delay="0">Shows</p>
-
-        <div class="shows__live reveal" data-delay="1">
-          <p class="shows__live-label">GoldenSide en vivo</p>
-          <div class="shows__live-video">
-            <iframe
-              src="https://www.youtube.com/embed/vjM6bovVxJw"
-              title="GoldenSide en vivo"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-
-        <h2 class="shows__subtitle reveal" data-delay="2">Próximos shows</h2>
-
-        <article class="poster reveal" data-delay="3">
-          <div class="poster__content">
-            <span class="poster__badge">Gratis</span>
-            <div class="poster__date">
-              <span class="poster__day">XX</span>
-              <div class="poster__month-year">
-                <span>Septiembre</span>
-                <span>2026</span>
-              </div>
-            </div>
-            <h3 class="poster__venue">Showcase - The Underground</h3>
-            <div class="poster__details">
-              <p>Por definir, Madrid</p>
-              <p>00:00h &middot; Entrada gratuita (reserva obligatoria)</p>
-            </div>
-            <div class="poster__ctas">
-              <a href="" class="cta cta--primary" target="_blank" rel="noopener">Reservar entrada</a>
-              <a href="" class="cta cta--ghost" target="_blank" rel="noopener">Ver en mapa</a>
-            </div>
-          </div>
-        </article>
-
-        <article class="poster reveal" data-delay="3">
-          <div class="poster__content">
-            <span class="poster__badge">Gratis</span>
-            <div class="poster__date">
-              <span class="poster__day">11</span>
-              <div class="poster__month-year">
-                <span>Abril</span>
-                <span>2026</span>
-              </div>
-            </div>
-            <h3 class="poster__venue">Mercado de Motores Madrid</h3>
-            <div class="poster__details">
-              <p>Museo del Ferrocarril — Paseo de las Delicias, 61, Madrid</p>
-              <p>12:30h &middot; Entrada gratuita (reserva obligatoria)</p>
-            </div>
-            <div class="poster__ctas">
-              <a href="https://www.eventbrite.es/e/entradas-mercado-de-motores-madrid-11-y-12-de-abril-entrada-gratis-1984720303856" class="cta cta--primary" target="_blank" rel="noopener">Reservar entrada</a>
-              <a href="https://maps.google.com/?q=Museo+del+Ferrocarril+Madrid+Paseo+de+las+Delicias+61" class="cta cta--ghost" target="_blank" rel="noopener">Ver en mapa</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- ════════ 5. UNDERGROUND / MANIFIESTO ════════ -->
-    <section class="underground" id="underground" aria-label="Manifiesto">
-      <div class="underground__inner">
-        <p class="section-label reveal" data-delay="0">Underground</p>
-        <h2 class="underground__title reveal" data-delay="1">Manifiesto</h2>
-        <div class="underground__block reveal" data-delay="2">
-          <blockquote class="underground__quote">
-            "GoldenSide nacio del interior. Su lado dorado no brilla por pulido — brilla por friccion, por la presion de expresar lo que la sociedad calla. No somos perfectos. La vida no siempre es bonita ni arreglada. A veces es ironica, a veces es cruda, a veces es un desastre a las tres de la manana. Esta etapa lo acepta."
-          </blockquote>
-        </div>
-        <p class="underground__close reveal" data-delay="3">"La honestidad radical como camino hacia tu lado dorado."</p>
-      </div>
-      <div class="red-tape red-tape--animated" aria-hidden="true"></div>
-    </section>
-
-    <!-- ════════ 6. ABOUT ════════ -->
-    <section class="about" id="about" aria-label="Quienes somos">
-      <div class="about__bg" aria-hidden="true"></div>
-      <div class="about__inner">
-        <p class="section-label reveal" data-delay="0">Quienes somos</p>
-        <div class="about__text">
-          <p class="reveal" data-delay="1">GoldenSide es ASMA y Carlos Dalton. Dos venezolanos en Madrid que convirtieron la distancia, la nostalgia y la busqueda interior en indie-pop con pulso electronico. Desde 2020 construyendo un sonido que no pide permiso — crudo cuando necesita serlo, luminoso cuando se lo gana.</p>
-          <div class="about__meta reveal" data-delay="2">
-            <span>Madrid</span><span>Desde 2020</span><span>Indie Pop / Indietronic</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 7. ABOUT ALT ════════ -->
-    <section class="about about--alt" id="about-2" aria-label="El sonido">
-      <div class="about__bg" aria-hidden="true"></div>
-      <div class="about__inner">
-        <p class="section-label reveal" data-delay="0">El sonido</p>
-        <div class="about__text">
-          <p class="reveal" data-delay="1">Indie pop con pulso electronico. Letras en ingles que hablan de lo que no se dice — la busqueda, el caos interno, la belleza en la contradiccion. Un sonido que no elige entre lo crudo y lo luminoso: los necesita a los dos.</p>
-          <div class="about__meta reveal" data-delay="2">
-            <span>Indie Pop</span><span>Indietronic</span><span>LiquidGold Records</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 8. MUSICA ════════ -->
-    <section class="musica" id="musica" aria-label="Musica">
-      <div class="musica__header">
-        <p class="section-label reveal" data-delay="0">Musica</p>
-      </div>
-
-      <!-- Featured single -->
-      <div class="featured">
-        <div class="featured__cover reveal" data-delay="0" id="featured-cover">
-          <div class="featured__video-wrap">
-            <iframe
-              src="https://www.youtube.com/embed/0OF1oQfERlw"
-              title="Demons (Acoustic) — GoldenSide"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-            ></iframe>
-          </div>
-        </div>
-        <div class="featured__info">
-          <h3 class="featured__title reveal" data-delay="1">DEMONS (ACOUSTIC)</h3>
-          <span class="featured__feat reveal" data-delay="1">GoldenSide &mdash; Marzo 2026</span>
-          <p class="featured__lyric reveal" data-delay="2"><em>"La versi&oacute;n ac&uacute;stica de uno de nuestros temas m&aacute;s personales. Los demonios, sin distorsi&oacute;n."</em></p>
-          <div class="featured__embed reveal" data-delay="3">
-            <iframe
-              style="border-radius:12px"
-              src="https://open.spotify.com/embed/track/4fqYup6UuCqHWxwuPT9QuI?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allowfullscreen=""
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Spotify player - Demons (Acoustic)"
-            ></iframe>
-          </div>
-          <div class="featured__platforms reveal" data-delay="4">
-            <a href="https://music.apple.com/us/album/demons-acoustic/1871771032?i=1871771033" class="platform-btn" target="_blank" rel="noopener">Apple Music</a>
-            <a href="https://open.spotify.com/intl-es/track/4fqYup6UuCqHWxwuPT9QuI?si=b09996ecc9904d0d" class="platform-btn" target="_blank" rel="noopener">Spotify</a>
-            <a href="https://distrokid.com/hyperfollow/goldenside/demons-acoustic" class="platform-btn" target="_blank" rel="noopener">Todas las plataformas</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Horizontal singles carousel -->
-      <div class="carousel-wrap">
-        <div class="carousel" role="list" aria-label="Discografia">
-          <div class="carousel-inner">
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/mis_demonios_cover.jpg" alt="Mis Demonios feat. Boston Rex — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Mis Demonios</h4>
-              <span class="card__year">feat. Boston Rex &middot; 2024</span>
-              <a href="https://distrokid.com/hyperfollow/goldenside/mis-demonios-feat-boston-rex" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/playing_for_keeps_cover.png" alt="Playing For Keeps — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Playing For Keeps</h4>
-              <span class="card__year">2023</span>
-              <a href="https://orcd.co/goldenside-playing-for-keeps" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/babe_cover.jpg" alt="Babe — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Babe</h4>
-              <span class="card__year">2023</span>
-              <a href="https://ffm.to/babe-goldenside" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/demons_cover.jpg" alt="Demons — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Demons</h4>
-              <span class="card__year">2023</span>
-              <a href="https://ffm.to/goldenside-demons" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/freedom_cover.jpg" alt="Freedom — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Freedom</h4>
-              <span class="card__year">2023</span>
-              <a href="https://ffm.to/goldenside-freedom" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/ru_different_cover.jpg" alt="R U Different? — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">R U Different?</h4>
-              <span class="card__year">2022</span>
-              <a href="https://ffm.to/goldenside-ru-different" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/freedom_acoustic_cover.jpg" alt="Freedom Acoustic — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">Freedom Acoustic</h4>
-              <span class="card__year">2022</span>
-              <a href="https://ffm.to/freedom-acoustic" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          <article class="card" role="listitem">
-            <div class="card__cover">
-              <img src="./assets/images/new_beginning_cover.jpg" alt="New Beginning — portada" loading="lazy" width="200" height="200">
-            </div>
-            <div class="card__info">
-              <h4 class="card__title">New Beginning</h4>
-              <span class="card__year">2022</span>
-              <a href="https://ffm.to/goldenside-new-beginning" class="card__listen" target="_blank" rel="noopener">Escuchar &rarr;</a>
-            </div>
-          </article>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ════════ 9. CONTACTO ════════ -->
-    <section class="contacto" id="contacto" aria-label="Contacto">
-      <p class="section-label reveal" data-delay="0">Contacto</p>
-      <p class="contacto__text reveal" data-delay="1">Para prensa, booking y colaboraciones</p>
-      <a href="mailto:wearegoldenside@gmail.com" class="contacto__email reveal" data-delay="2">wearegoldenside@gmail.com</a>
-      <div class="contacto__links reveal" data-delay="3">
-        <a href="https://wearegoldenside.com/prensa/" target="_blank" rel="noopener">Prensa / EPK</a>
-      </div>
-
-      <!-- Contact form -->
-      <form
-        class="contacto__form reveal"
-        data-delay="4"
-        id="contacto-form"
-        action="https://formspree.io/f/YOUR_FORM_ID"
-        method="POST"
-        novalidate
-        aria-label="Formulario de contacto"
-      >
-        <div class="contacto__form-group">
-          <label class="contacto__label" for="cf-name">Nombre</label>
-          <input
-            class="contacto__input"
-            type="text"
-            id="cf-name"
-            name="nombre"
-            placeholder="Tu nombre"
-            required
-            autocomplete="name"
-          >
-        </div>
-
-        <div class="contacto__form-group">
-          <label class="contacto__label" for="cf-email">Email</label>
-          <input
-            class="contacto__input"
-            type="email"
-            id="cf-email"
-            name="email"
-            placeholder="tu@email.com"
-            required
-            autocomplete="email"
-          >
-        </div>
-
-        <div class="contacto__form-group contacto__form-group--full">
-          <label class="contacto__label" for="cf-asunto">Asunto</label>
-          <select class="contacto__select" id="cf-asunto" name="asunto" required>
-            <option value="" disabled selected>Selecciona un motivo</option>
-            <option value="prensa">Prensa</option>
-            <option value="booking">Booking</option>
-            <option value="colaboracion">Colaboracion</option>
-            <option value="otro">Otro</option>
-          </select>
-        </div>
-
-        <div class="contacto__form-group contacto__form-group--full">
-          <label class="contacto__label" for="cf-mensaje">Mensaje</label>
-          <textarea
-            class="contacto__textarea"
-            id="cf-mensaje"
-            name="mensaje"
-            placeholder="Cuentanos de que se trata..."
-            required
-          ></textarea>
-        </div>
-
-        <div class="contacto__form-group contacto__form-group--full">
-          <label class="contacto__checkbox-wrap">
-            <input type="checkbox" id="cf-privacy" name="privacidad" required>
-            <span class="contacto__checkbox-text">He leído y acepto la <a href="./legal/politica-privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a></span>
-          </label>
-        </div>
-
-        <div class="contacto__form-group contacto__form-group--full">
-          <button type="submit" class="contacto__submit">
+      </div> -->
+<div class="hero__content">
+<h1 aria-label="GoldenSide" class="progress__title">
+<span class="progress__letter" style="--i:0">G</span><!--
+--><span class="progress__letter" style="--i:1">O</span><!--
+--><span class="progress__letter" style="--i:2">L</span><!--
+--><span class="progress__letter" style="--i:3">D</span><!--
+--><span class="progress__letter" style="--i:4">E</span><!--
+--><span class="progress__letter" style="--i:5">N</span><!--
+--><span class="progress__letter" style="--i:6">S</span><!--
+--><span class="progress__letter" style="--i:7">I</span><!--
+--><span class="progress__letter" style="--i:8">D</span><!--
+--><span class="progress__letter" style="--i:9">E</span>
+</h1>
+<div class="hero__ctas">
+<a class="cta cta--primary" href="https://distrokid.com/hyperfollow/goldenside/mis-demonios-feat-boston-rex" rel="noopener" target="_blank">Escuchar ahora</a>
+<a class="cta cta--ghost" href="#shows">Próximos shows</a>
+</div>
+</div>
+<div aria-hidden="true" class="glitch-fx"></div>
+</section>
+<!-- ════════ 2. REDES SOCIALES ════════ -->
+<section aria-label="Redes sociales" class="social-bar" id="redes">
+<p class="social-bar__label">Síguenos</p>
+<div aria-label="Redes sociales" class="social-bar__icons">
+<div class="ticker-inner">
+<a aria-label="Spotify" class="social-icon" href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+</a>
+<a aria-label="Instagram" class="social-icon" href="https://www.instagram.com/wearegoldenside/" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+<a aria-label="YouTube" class="social-icon" href="https://www.youtube.com/@wearegoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
+</a>
+<a aria-label="TikTok" class="social-icon" href="https://www.tiktok.com/@somosgoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+<a aria-label="Facebook" class="social-icon" href="https://www.facebook.com/goldensidemusic" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a aria-label="X / Twitter" class="social-icon" href="https://twitter.com/wearegoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<!-- clones para loop infinito (aria-hidden, tabindex=-1) -->
+<a class="social-icon" href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+</a>
+<a class="social-icon" href="https://www.instagram.com/wearegoldenside/" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+<a class="social-icon" href="https://www.youtube.com/@wearegoldenside" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
+</a>
+<a class="social-icon" href="https://www.tiktok.com/@somosgoldenside" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+<a class="social-icon" href="https://www.facebook.com/goldensidemusic" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg>
+</a>
+<a class="social-icon" href="https://twitter.com/wearegoldenside" rel="noopener" tabindex="-1" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- ════════ 3. UNDERGROUND IS OPEN ════════ -->
+<section aria-label="The Underground Is Open" class="underground-open" id="underground-open">
+<div aria-hidden="true" class="underground-open__bg"></div>
+<div aria-hidden="true" class="underground-open__overlay"></div>
+<div class="underground-open__inner">
+<div class="underground-open__text">
+<p class="section-label reveal" data-delay="0">Manifiesto</p>
+<h2 class="underground-open__title reveal" data-delay="1">The Underground<br/>Is Open</h2>
+<div class="underground-open__body">
+<p class="reveal" data-delay="2">
+              Todos llevamos una máscara.
+            </p>
+<p class="reveal" data-delay="3">
+              A veces se parece a una sonrisa. A veces a seguridad. A veces a éxito. A veces a una vida perfecta, a un estilo de vida inalcanzable. Y todas estas máscaras las vemos todos los días en las redes sociales, en la publicidad, en la calle, en la universidad, en el trabajo, en nuestras relaciones.
+            </p>
+<p class="reveal" data-delay="3">
+              Pero detrás de esa máscara hay una batalla: lo que dudas, lo que callas, lo que sientes, lo que cargas y lo que intentas transformar de ti todos los días.
+            </p>
+<p class="reveal" data-delay="3">
+              La vida no es perfecta. Nadie tiene todo resuelto. Y aun así, incluso en medio de la imperfección, hay algo valioso intentando salir a la luz.
+            </p>
+<p class="reveal" data-delay="4">
+              Lo que estás viviendo, lo que has aprendido, lo que te ha costado levantarte, también puede ser algo que otra persona necesita escuchar. Todos tenemos algo que decir. Todos tenemos algo que convertir en fuerza.
+            </p>
+<p class="underground-open__close reveal visible" data-delay="4">Detrás de cada máscara hay una batalla. No la ocultes, conviértela en fuerza.</p>
+</div>
+</div>
+</div>
+<div aria-hidden="true" class="gradient-divider--from-red"></div>
+</section>
+<!-- ════════ 4. SHOWS ════════ -->
+<section aria-label="Próximos shows" class="shows" id="shows">
+<div class="shows__inner">
+<p class="section-label reveal" data-delay="0">Shows</p>
+<div class="shows__live reveal" data-delay="1">
+<p class="shows__live-label">GoldenSide en vivo</p>
+<div class="shows__live-video">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" loading="lazy" src="https://www.youtube.com/embed/vjM6bovVxJw" title="GoldenSide en vivo"></iframe>
+</div>
+</div>
+<h2 class="shows__subtitle reveal" data-delay="2">Próximos shows</h2>
+<article class="poster reveal" data-delay="3">
+<div class="poster__content">
+<span class="poster__badge">Gratis</span>
+<div class="poster__date">
+<span class="poster__day">XX</span>
+<div class="poster__month-year">
+<span>Septiembre</span>
+<span>2026</span>
+</div>
+</div>
+<h3 class="poster__venue">Showcase - The Underground</h3>
+<div class="poster__details">
+<p>Por definir, Madrid</p>
+<p>00:00h · Entrada gratuita (reserva obligatoria)</p>
+</div>
+<div class="poster__ctas">
+<a aria-disabled="true" class="cta cta--primary cta--disabled" href="#" tabindex="-1">
+                Reservar entrada
+              </a>
+<a aria-disabled="true" class="cta cta--ghost cta--disabled" href="#" tabindex="-1">
+                Ver en mapa
+              </a>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- ════════ 5. ABOUT ════════ -->
+<section aria-label="Quiénes somos" class="about" id="about">
+<div aria-hidden="true" class="about__bg"></div>
+<div class="about__inner">
+<p class="section-label reveal" data-delay="0">Quiénes somos</p>
+<div class="about__text">
+<p class="reveal" data-delay="1">
+            GoldenSide somos Aarón y Carlos, dos venezolanos que hoy viven en Madrid, pero que vienen de una historia marcada por cambios, distancia y reinvención.
+          </p>
+<p class="reveal" data-delay="2">
+            En 2017 llegamos a España después del éxodo venezolano, y desde entonces hemos tenido que aprender a empezar de nuevo más de una vez: como personas, como músicos y como proyecto. GoldenSide ha ido creciendo con nosotros, single tras single, cambiando, probando, fallando, mejorando y acercándose cada vez más a eso que siempre hemos tenido en la cabeza.
+          </p>
+<p class="reveal" data-delay="3">
+            Queremos que esta nueva etapa se sienta más directa, más humana y más nuestra. Por eso estamos llevando las letras al español: para conectar con nuestra raíz, con lo que vivimos, con lo que sentimos y con esa parte de nosotros que necesitaba hablar sin traducirse tanto.
+          </p>
+<p class="reveal" data-delay="4">
+            Porque al final, de eso se trata: todos tenemos una historia, una batalla, una experiencia o algo guardado que puede convertirse en fuerza cuando nos atrevemos a contarlo.
+          </p>
+<p class="reveal" data-delay="5">
+            Para conocer mejor nuestro recorrido, logros y evolución como banda:
+          </p>
+<p class="about__cta reveal" data-delay="5">
+<a class="about__cta-link" href="https://wearegoldenside.es/GoldenSide-PressKit-2026.pdf" rel="noopener" target="_blank">
+<span>Descarga el kit de prensa</span>
+<span aria-hidden="true">→</span>
+</a>
+</p>
+<div class="about__meta reveal" data-delay="6">
+<span>Madrid</span>
+<span>Desde 2020</span>
+<span>Indie Pop / Indietronic</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ════════ 6. EL SONIDO ════════ -->
+<section aria-label="El sonido" class="about about--alt" id="about-2">
+<div aria-hidden="true" class="about__bg"></div>
+<div class="about__inner">
+<p class="section-label reveal" data-delay="0">El sonido</p>
+<div class="about__text">
+<p class="reveal" data-delay="1">
+            El sonido que queremos presentar ahora es más vivo, más físico y más atrevido.
+          </p>
+<p class="reveal" data-delay="2">
+            Estamos entrando en una etapa donde no queremos limitarnos por géneros. Seguimos teniendo nuestra esencia indie, pop y electrónica, pero ahora la estamos llevando a un lugar más experimental, con letras en español, sonidos más orgánicos, guitarras más presentes y una energía más libre.
+          </p>
+<p class="reveal" data-delay="3">
+            Muchas de estas canciones nacieron como maquetas desde los primeros años del proyecto. Estuvieron guardadas, cambiando con nosotros, esperando el momento correcto para salir. Y hoy sentimos que ese momento llegó.
+          </p>
+<p class="reveal" data-delay="4">
+            No estamos buscando sonar al mercado actual ni seguir una fórmula. Queremos sacar este material porque nos representa, porque nos emociona y porque sentimos que es lo que nuestro corazón nos está pidiendo ahora.
+          </p>
+<p class="reveal" data-delay="5">
+            Nuestra batalla también ha sido esa: mejorar, insistir, aprender y acercar cada vez más GoldenSide al sonido que tenemos en la cabeza.
+          </p>
+<p class="reveal" data-delay="6">
+            Lo que estamos planteando en esta etapa es muy importante para nosotros: un sonido más maduro, más arriesgado y más conectado con lo que queremos hacer, sin amarrarnos tanto a lo que se espera de una banda ni a lo que otros puedan opinar.
+          </p>
+<p class="about__cta reveal" data-delay="7">
+<a class="about__cta-link" href="#musica">
+<span>Escucha nuestra música</span>
+<span aria-hidden="true">→</span>
+</a>
+</p>
+<div class="about__meta reveal" data-delay="8">
+<span>Indie Pop</span>
+<span>Indietronic</span>
+<span>Experimental Pop</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ════════ 7. MÚSICA ════════ -->
+<section aria-label="Música" class="musica" id="musica">
+<div class="musica__header">
+<p class="section-label reveal" data-delay="0">Música</p>
+</div>
+<!-- Featured single -->
+<div class="featured">
+<div class="featured__cover reveal" data-delay="0" id="featured-cover">
+<div class="featured__video-wrap">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" loading="lazy" src="https://www.youtube.com/embed/0OF1oQfERlw" title="Demons (Acoustic) — GoldenSide"></iframe>
+</div>
+</div>
+<div class="featured__info">
+<h3 class="featured__title reveal" data-delay="1">DEMONS (ACOUSTIC)</h3>
+<span class="featured__feat reveal" data-delay="1">GoldenSide — Marzo 2026</span>
+<p class="featured__lyric reveal" data-delay="2"><em>"La versión acústica de uno de nuestros temas más personales. Los demonios, sin distorsión."</em></p>
+<div class="featured__embed reveal" data-delay="3">
+<iframe allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen="" frameborder="0" height="152" loading="lazy" src="https://open.spotify.com/embed/track/4fqYup6UuCqHWxwuPT9QuI?utm_source=generator&amp;theme=0" style="border-radius:12px" title="Spotify player - Demons (Acoustic)" width="100%"></iframe>
+</div>
+<div class="featured__platforms reveal" data-delay="4">
+<a class="platform-btn" href="https://music.apple.com/us/album/demons-acoustic/1871771032?i=1871771033" rel="noopener" target="_blank">Apple Music</a>
+<a class="platform-btn" href="https://open.spotify.com/intl-es/track/4fqYup6UuCqHWxwuPT9QuI?si=b09996ecc9904d0d" rel="noopener" target="_blank">Spotify</a>
+<a class="platform-btn" href="https://distrokid.com/hyperfollow/goldenside/demons-acoustic" rel="noopener" target="_blank">Todas las plataformas</a>
+</div>
+</div>
+</div>
+<!-- Horizontal singles carousel -->
+<div class="carousel-wrap">
+<div aria-label="Discografia" class="carousel" role="list">
+<div class="carousel-inner">
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Mis Demonios feat. Boston Rex — portada" height="200" loading="lazy" src="./assets/images/mis_demonios_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Mis Demonios</h4>
+<span class="card__year">feat. Boston Rex · 2024</span>
+<a class="card__listen" href="https://distrokid.com/hyperfollow/goldenside/mis-demonios-feat-boston-rex" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Playing For Keeps — portada" height="200" loading="lazy" src="./assets/images/playing_for_keeps_cover.png" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Playing For Keeps</h4>
+<span class="card__year">2023</span>
+<a class="card__listen" href="https://orcd.co/goldenside-playing-for-keeps" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Babe — portada" height="200" loading="lazy" src="./assets/images/babe_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Babe</h4>
+<span class="card__year">2023</span>
+<a class="card__listen" href="https://ffm.to/babe-goldenside" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Demons — portada" height="200" loading="lazy" src="./assets/images/demons_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Demons</h4>
+<span class="card__year">2023</span>
+<a class="card__listen" href="https://ffm.to/goldenside-demons" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Freedom — portada" height="200" loading="lazy" src="./assets/images/freedom_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Freedom</h4>
+<span class="card__year">2023</span>
+<a class="card__listen" href="https://ffm.to/goldenside-freedom" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="R U Different? — portada" height="200" loading="lazy" src="./assets/images/ru_different_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">R U Different?</h4>
+<span class="card__year">2022</span>
+<a class="card__listen" href="https://ffm.to/goldenside-ru-different" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="Freedom Acoustic — portada" height="200" loading="lazy" src="./assets/images/freedom_acoustic_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">Freedom Acoustic</h4>
+<span class="card__year">2022</span>
+<a class="card__listen" href="https://ffm.to/freedom-acoustic" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+<article class="card" role="listitem">
+<div class="card__cover">
+<img alt="New Beginning — portada" height="200" loading="lazy" src="./assets/images/new_beginning_cover.jpg" width="200"/>
+</div>
+<div class="card__info">
+<h4 class="card__title">New Beginning</h4>
+<span class="card__year">2022</span>
+<a class="card__listen" href="https://ffm.to/goldenside-new-beginning" rel="noopener" target="_blank">Escuchar →</a>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section>
+<!-- ════════ 8. CONTACTO ════════ -->
+<section aria-label="Contacto" class="contacto" id="contacto">
+<p class="section-label reveal" data-delay="0">Contacto</p>
+<p class="contacto__text reveal" data-delay="1">Para prensa, booking y colaboraciones</p>
+<a class="contacto__email reveal" data-delay="2" href="mailto:wearegoldenside@gmail.com">wearegoldenside@gmail.com</a>
+<p class="about__cta reveal" data-delay="5">
+<a class="about__cta-link" href="https://wearegoldenside.es/GoldenSide-PressKit-2026.pdf" rel="noopener" target="_blank">
+<span>Descarga el kit de prensa</span>
+<span aria-hidden="true">→</span>
+</a>
+</p>
+<!-- Contact form: requiere crear `contact.php` en IONOS para procesar el envío -->
+<form action="./contact.php" aria-label="Formulario de contacto" class="contacto__form reveal" data-delay="4" id="contacto-form" method="POST" novalidate="">
+<!-- Honeypot anti-spam: oculto a usuarios, los bots lo rellenan -->
+<div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" tabindex="-1">
+<label for="cf-website">No rellenar este campo</label>
+<input autocomplete="off" id="cf-website" name="website" tabindex="-1" type="text"/>
+</div>
+<div class="contacto__form-group">
+<label class="contacto__label" for="cf-name">Nombre</label>
+<input autocomplete="name" class="contacto__input" id="cf-name" name="nombre" placeholder="Tu nombre" required="" type="text"/>
+</div>
+<div class="contacto__form-group">
+<label class="contacto__label" for="cf-email">Email</label>
+<input autocomplete="email" class="contacto__input" id="cf-email" name="email" placeholder="tu@email.com" required="" type="email"/>
+</div>
+<div class="contacto__form-group contacto__form-group--full">
+<label class="contacto__label" for="cf-asunto">Asunto</label>
+<select class="contacto__select" id="cf-asunto" name="asunto" required="">
+<option disabled="" selected="" value="">Selecciona un motivo</option>
+<option value="prensa">Prensa</option>
+<option value="booking">Booking</option>
+<option value="colaboracion">Colaboración</option>
+<option value="otro">Otro</option>
+</select>
+</div>
+<div class="contacto__form-group contacto__form-group--full">
+<label class="contacto__label" for="cf-mensaje">Mensaje</label>
+<textarea class="contacto__textarea" id="cf-mensaje" name="mensaje" placeholder="Cuéntanos de qué se trata..." required=""></textarea>
+</div>
+<div class="contacto__form-group contacto__form-group--full">
+<label class="contacto__checkbox-wrap">
+<input id="cf-privacy" name="privacidad" required="" type="checkbox"/>
+<span class="contacto__checkbox-text">He leído y acepto la <a href="./legal/politica-privacidad.html" rel="noopener" target="_blank">Política de Privacidad</a></span>
+</label>
+</div>
+<div class="contacto__form-group contacto__form-group--full">
+<button aria-disabled="true" class="contacto__submit" disabled="" type="submit">
             Enviar mensaje
-            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
-              <path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <p class="contacto__status" id="cf-status" role="status" aria-live="polite"></p>
-        </div>
-      </form>
-    </section>
-
-    <div class="gradient-divider gradient-divider--to-red" aria-hidden="true"></div>
-  </main>
-
-  <!-- ════════ FOOTER ════════ -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer__path" aria-hidden="true">
-      <span></span><span></span><span></span>
-    </div>
-    <p class="footer__copy">&copy; 2026 GoldenSide — Todos los derechos reservados</p>
-    <nav class="footer__legal" aria-label="Legal">
-      <a href="./legal/aviso-legal.html">Aviso Legal</a>
-      <a href="./legal/politica-cookies.html">Política de Cookies</a>
-      <a href="./legal/politica-privacidad.html">Política de Privacidad</a>
-    </nav>
-    <div class="footer__socials">
-      <a href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" target="_blank" rel="noopener" aria-label="Spotify">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/wearegoldenside/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@wearegoldenside" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@wearegoldenside" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      </a>
-    </div>
-    <p class="footer__claim"><em>"make your interior loud"</em></p>
-  </footer>
-
-  <!-- Cookie banner -->
-  <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies" aria-live="polite">
-    <p class="cookie-banner__text">
+            <svg aria-hidden="true" fill="none" height="10" viewbox="0 0 14 10" width="14">
+<path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"></path>
+</svg>
+</button>
+<p aria-live="polite" class="contacto__status" id="cf-status" role="status"></p>
+</div>
+</form>
+</section>
+<div aria-hidden="true" class="gradient-divider gradient-divider--to-red"></div>
+</main>
+<!-- ════════ FOOTER ════════ -->
+<footer class="footer" role="contentinfo">
+<div aria-hidden="true" class="footer__path">
+<span></span><span></span><span></span>
+</div>
+<p class="footer__copy">© 2026 GoldenSide — Todos los derechos reservados</p>
+<nav aria-label="Legal" class="footer__legal">
+<a href="./legal/aviso-legal.html">Aviso Legal</a>
+<a href="./legal/politica-cookies.html">Política de Cookies</a>
+<a href="./legal/politica-privacidad.html">Política de Privacidad</a>
+</nav>
+<div class="footer__socials">
+<a aria-label="Spotify" href="https://open.spotify.com/artist/3d6UTkWVMNHKwO2TElGvAi" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path></svg>
+</a>
+<a aria-label="Instagram" href="https://www.instagram.com/wearegoldenside/" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path></svg>
+</a>
+<a aria-label="YouTube" href="https://www.youtube.com/@wearegoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"></path></svg>
+</a>
+<a aria-label="TikTok" href="https://www.tiktok.com/@wearegoldenside" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="currentColor" viewbox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path></svg>
+</a>
+</div>
+<p class="footer__claim"><em>"make your interior loud"</em></p>
+</footer>
+<!-- Cookie banner -->
+<div aria-label="Aviso de cookies" aria-live="polite" class="cookie-banner" id="cookie-banner" role="region">
+<p class="cookie-banner__text">
       Usamos cookies propias y de terceros (YouTube, análisis) para mejorar tu experiencia.
       Puedes aceptarlas o rechazarlas. Más info en nuestra
-      <a href="./legal/politica-cookies.html" target="_blank" rel="noopener">Política de Cookies</a>.
+      <a href="./legal/politica-cookies.html" rel="noopener" target="_blank">Política de Cookies</a>.
     </p>
-    <div class="cookie-banner__actions">
-      <button class="cookie-btn cookie-btn--accept" id="cookie-accept">Aceptar cookies</button>
-      <button class="cookie-btn cookie-btn--reject" id="cookie-reject">Solo esenciales</button>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/main.js" defer></script>
+<div class="cookie-banner__actions">
+<button class="cookie-btn cookie-btn--accept" id="cookie-accept">Aceptar cookies</button>
+<button class="cookie-btn cookie-btn--reject" id="cookie-reject">Solo esenciales</button>
+</div>
+</div>
+<!-- Scripts -->
+<script defer="" src="js/main.js"></script>
 </body>
 </html>

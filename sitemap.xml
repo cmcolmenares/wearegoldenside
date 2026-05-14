@@ -1,10 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wearegoldenside.com/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/og-goldenside.jpg</image:loc>
+      <image:title>GoldenSide — The Underground is Open</image:title>
+      <image:caption>GoldenSide, dúo venezolano de indie pop y electro-pop en Madrid.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/GoldenSideLandscape.jpg</image:loc>
+      <image:title>GoldenSide — fotografía de banda</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/demons_acoustic_cover.jpg</image:loc>
+      <image:title>Demons (Acoustic) — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/mis_demonios_cover.jpg</image:loc>
+      <image:title>Mis Demonios feat. Boston Rex — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/playing_for_keeps_cover.png</image:loc>
+      <image:title>Playing For Keeps — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/babe_cover.jpg</image:loc>
+      <image:title>Babe — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/demons_cover.jpg</image:loc>
+      <image:title>Demons — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/freedom_cover.jpg</image:loc>
+      <image:title>Freedom — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/ru_different_cover.jpg</image:loc>
+      <image:title>R U Different? — GoldenSide</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://wearegoldenside.com/assets/images/new_beginning_cover.jpg</image:loc>
+      <image:title>New Beginning — GoldenSide</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://wearegoldenside.com/legal/aviso-legal.html</loc>

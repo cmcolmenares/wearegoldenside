@@ -152,10 +152,22 @@
   const cfStatus = document.getElementById('cf-status');
 
   if (contactForm && cfStatus) {
+    const submitBtn = contactForm.querySelector('.contacto__submit');
+
+    // Mantén el botón deshabilitado hasta que todos los campos required sean válidos.
+    const updateSubmitState = () => {
+      const valid = contactForm.checkValidity();
+      submitBtn.disabled = !valid;
+      submitBtn.setAttribute('aria-disabled', String(!valid));
+    };
+    contactForm.addEventListener('input', updateSubmitState);
+    contactForm.addEventListener('change', updateSubmitState);
+    updateSubmitState();
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (submitBtn.disabled) return;
 
-      const submitBtn = contactForm.querySelector('.contacto__submit');
       const data = new FormData(contactForm);
 
       submitBtn.disabled = true;
@@ -181,8 +193,8 @@
         cfStatus.textContent = 'Algo salio mal. Escribenos directamente a wearegoldenside@gmail.com';
         cfStatus.classList.add('contacto__status--err');
       } finally {
-        submitBtn.disabled = false;
         submitBtn.innerHTML = 'Enviar mensaje <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+        updateSubmitState();
       }
     });
   }
