@@ -20,7 +20,10 @@ wearegoldenside/
 ├── presskit-preview.html    — Press kit en formato HTML (A4 landscape, 5 páginas)
 ├── robots.txt               — Configuración para crawlers SEO
 ├── sitemap.xml              — Mapa del sitio (4 URLs)
-├── .mcp.json                — Configuración de servidores MCP
+├── CLAUDE.md                — Este archivo
+├── .claude/
+│   ├── launch.json          — Servidor de desarrollo (python3 -m http.server 5173)
+│   └── settings.json        — Permisos compartidos de Claude Code
 ├── css/
 │   └── styles.css           — Estilos completos (~1853 líneas, metodología BEM)
 ├── js/
@@ -35,7 +38,6 @@ wearegoldenside/
 │   ├── politica-cookies.html
 │   └── politica-privacidad.html
 └── docs/
-    ├── CLAUDE.md            — Este archivo
     ├── presskit_brief.md    — Especificaciones del press kit
     └── quienesSomos.md      — Texto biográfico del dúo
 ```
