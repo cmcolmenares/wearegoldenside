@@ -1,0 +1,13 @@
+# Claude Code — personal settings and session worktrees
+.claude/settings.local.json
+.claude/worktrees/
+
+# MCP config (may contain API keys)
+.mcp.json
+
+# macOS
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
