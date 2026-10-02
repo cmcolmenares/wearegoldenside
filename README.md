@@ -21,7 +21,7 @@ La web es la presencia digital principal del proyecto y su herramienta de captac
 
 | Objetivo | Cómo lo cubre la web |
 |---|---|
-| Presentar la propuesta artística | Hero, manifiesto, bio del dúo |
+| Presentar la propuesta artística | Hero, "The Underground Is Open", bio del dúo |
 | Llevar tráfico a plataformas | Spotify embebido, carrusel de canciones, enlaces a Apple Music, YouTube y redes |
 | Conseguir conciertos y colaboraciones | Formulario de contacto segmentado (prensa, booking, colaboración, otro) |
 | Dar material a prensa y bookers | Press kit en PDF (`GoldenSide-PressKit-2026.pdf`) |
@@ -63,7 +63,7 @@ wearegoldenside/
 ├── assets/
 │   ├── images/                Fotos, portadas, logos, favicons, imagen OG
 │   ├── fonts/progress_3/      Fuente de marca "Progress"
-│   └── gif/                   Vídeo del manifiesto (mp4, webm, gif)
+│   └── gif/                   Vídeo del manifiesto (mp4, webm); sin uso actualmente
 ├── docs/                      Brief del press kit y textos de la bio
 ├── GoldenSide-PressKit-2026.pdf
 ├── robots.txt · sitemap.xml · site.webmanifest
@@ -73,7 +73,7 @@ wearegoldenside/
 
 ### Secciones de `index.html`
 
-Header → Hero (`#hero`) → Barra social (`#redes`) → Underground is Open (`#underground-open`) → Shows (`#shows`) → Manifiesto (`#underground`) → About (`#about`, `#about-2`) → Música (`#musica`) → Contacto (`#contacto`) → Footer → Banner de cookies.
+Header → Hero (`#hero`) → Barra social (`#redes`) → Underground is Open (`#underground-open`) → Shows (`#shows`) → About (`#about`, `#about-2`) → Música (`#musica`) → Contacto (`#contacto`) → Footer → Banner de cookies.
 
 ### Funcionalidad de `main.js`
 
@@ -82,7 +82,6 @@ Header → Hero (`#hero`) → Barra social (`#redes`) → Underground is Open (`
 - Menú móvil (se cierra con ESC y bloquea el scroll del body)
 - Parallax en `#about` y `#about-2`
 - Animaciones de aparición con `IntersectionObserver` (clase `.reveal`)
-- Vídeo del manifiesto que se reproduce al entrar en pantalla
 - Carrusel de canciones
 - Envío del formulario con `fetch` y estados de carga, éxito y error
 - Consentimiento de cookies en `localStorage` (`gs_cookie_consent`)

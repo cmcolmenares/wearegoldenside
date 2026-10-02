@@ -36,7 +36,7 @@ wearegoldenside/
 │   ├── images/              — Fotos de banda, portadas de álbumes, logos, favicon
 │   ├── fonts/
 │   │   └── progress_3/      — Fuente personalizada "Progress" (uso personal)
-│   └── gif/                 — Video manifiesto (mp4, webm, gif)
+│   └── gif/                 — Video manifiesto (mp4, webm); sin uso desde que se eliminó la sección `#underground`
 ├── legal/
 │   ├── aviso-legal.html
 │   ├── politica-cookies.html
@@ -116,7 +116,6 @@ No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS est
 | Social bar | `#redes` | Ticker animado con 6 redes sociales |
 | Underground is Open | `#underground-open` | Overlay rojo, texto manifiesto |
 | Shows | `#shows` | YouTube live + 2 posters de eventos |
-| Manifiesto | `#underground` | Cita del manifiesto Underground Era |
 | About | `#about` | Bio del dúo, foto de banda (bg) |
 | About alt | `#about-2` | Descripción sonora, segunda foto |
 | Música | `#musica` | Canción destacada + carrusel de 8 canciones |
@@ -135,7 +134,7 @@ Módulos funcionales implementados:
 3. **Mobile menu** — Toggle con ESC, overflow hidden en body.
 4. **Parallax** — Listener pasivo en scroll, solo en `#about` y `#about-2`.
 5. **Reveal on scroll** — IntersectionObserver en `.reveal`, agrega clase `visible`.
-6. **GIF video** — Autoplay al entrar en viewport, congela en último frame al terminar.
+6. **GIF video** — Autoplay al entrar en viewport, congela en último frame al terminar. Actualmente inactivo: la sección `.gif-section` ya no existe en `index.html` (el código está protegido con un `if`).
 7. **Carrusel** — Clona tarjetas dinámicamente, CSS animation 50s, pausa en hover.
 8. **Formulario de contacto** — `fetch` async/await a `contact.php` (acción del form), estados loading/success/error, reset al enviar.
 9. **Cookie banner** — localStorage key `gs_cookie_consent`, botones accept/reject.
