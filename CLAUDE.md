@@ -17,17 +17,21 @@ El proyecto está en una etapa creativa denominada **Underground Era (2026)**: m
 ```
 wearegoldenside/
 ├── index.html               — Página principal
-├── presskit-preview.html    — Press kit en formato HTML (A4 landscape, 5 páginas)
+├── contact.php              — Procesador del formulario de contacto (PHP mail(), IONOS)
+├── GoldenSide-PressKit-2026.pdf — Press kit en PDF
 ├── robots.txt               — Configuración para crawlers SEO
 ├── sitemap.xml              — Mapa del sitio (4 URLs)
+├── site.webmanifest         — Web App Manifest
+├── README.md                — Documentación general del proyecto
 ├── CLAUDE.md                — Este archivo
+├── .gitignore               — Excluye .mcp.json, .claude/settings.local.json, worktrees, .env, .DS_Store
 ├── .claude/
 │   ├── launch.json          — Servidor de desarrollo (python3 -m http.server 5173)
 │   └── settings.json        — Permisos compartidos de Claude Code
 ├── css/
-│   └── styles.css           — Estilos completos (~1853 líneas, metodología BEM)
+│   └── styles.css           — Estilos completos (~2100 líneas, metodología BEM)
 ├── js/
-│   └── main.js              — JavaScript vanilla (~208 líneas)
+│   └── main.js              — JavaScript vanilla (~220 líneas)
 ├── assets/
 │   ├── images/              — Fotos de banda, portadas de álbumes, logos, favicon
 │   ├── fonts/
@@ -52,13 +56,12 @@ wearegoldenside/
 | Estilos | CSS3 puro, metodología BEM, custom properties |
 | Scripts | JavaScript vanilla (ES6+), sin frameworks |
 | Tipografía | Google Fonts + fuente local "Progress" |
-| Formularios | Formspree (gestión de envíos) |
+| Formularios | `contact.php` (PHP 7.4+/8.x, función `mail()`) |
+| Hosting | IONOS (hosting compartido) |
 | Música | Spotify Embed (iframe) |
 | Video | YouTube Embed (iframe) |
-| Imágenes IA | MCP nanobanana (Gemini Flash Image) |
-| Componentes UI | MCP @21st-dev/magic |
 
-No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS estático.
+No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS estático; lo único que se ejecuta en servidor es `contact.php`.
 
 ---
 
@@ -117,7 +120,7 @@ No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS est
 | About | `#about` | Bio del dúo, foto de banda (bg) |
 | About alt | `#about-2` | Descripción sonora, segunda foto |
 | Música | `#musica` | Canción destacada + carrusel de 8 canciones |
-| Contacto | `#contacto` | Formulario Formspree + email/social |
+| Contacto | `#contacto` | Formulario (POST a `contact.php`) + email/social |
 | Footer | `footer` | Copyright, links legales, iconos sociales |
 | Cookie banner | `.cookie-banner` | Persistido en localStorage |
 
@@ -134,7 +137,7 @@ Módulos funcionales implementados:
 5. **Reveal on scroll** — IntersectionObserver en `.reveal`, agrega clase `visible`.
 6. **GIF video** — Autoplay al entrar en viewport, congela en último frame al terminar.
 7. **Carrusel** — Clona tarjetas dinámicamente, CSS animation 50s, pausa en hover.
-8. **Formulario Formspree** — Async/await, estados loading/success/error, reset al enviar.
+8. **Formulario de contacto** — `fetch` async/await a `contact.php` (acción del form), estados loading/success/error, reset al enviar.
 9. **Cookie banner** — localStorage key `gs_cookie_consent`, botones accept/reject.
 
 ---
@@ -233,9 +236,9 @@ No es derrotismo. Es proceso, humanidad, tensión estética, búsqueda del lado 
 
 ---
 
-## Press Kit (`presskit-preview.html`)
+## Press Kit (`GoldenSide-PressKit-2026.pdf`)
 
-Documento de 5 páginas en formato A4 landscape (297mm × 210mm). Optimizado para impresión (`@media print`).
+Documento PDF de 5 páginas en formato A4 landscape. Las especificaciones de contenido y diseño están en `docs/presskit_brief.md`.
 
 | Página | Contenido |
 |--------|-----------|
@@ -259,12 +262,18 @@ Ubicadas en `/legal/`. Todas comparten estructura y estilos con el sitio princip
 
 ---
 
-## Servidores MCP disponibles (`.mcp.json`)
+## Formulario de contacto (`contact.php`)
 
-| Servidor | Comando | Uso |
-|---------|---------|-----|
-| `@21st-dev/magic` | `npx -y @21st-dev/magic@latest` | Generación y refinado de componentes UI |
-| `nanobanana` | `uvx nanobanana-mcp-server@latest` | Generación de imágenes con Gemini Flash |
+- Solo acepta `POST`; responde siempre JSON (`{ ok: true }` o `{ ok: false, error, fields }`).
+- Honeypot anti-spam: campo oculto `website`.
+- Valida `nombre`, `email`, `asunto` (`prensa` | `booking` | `colaboracion` | `otro`), `mensaje` y `privacidad`.
+- `MAIL_TO` y `MAIL_FROM` son constantes al inicio del archivo. `MAIL_FROM` debe ser una dirección del dominio creada en IONOS (si no, falla SPF/DKIM).
+- `python3 -m http.server` no ejecuta PHP: en local el formulario no funciona (usar `php -S localhost:5173` para probarlo).
+
+## Secretos y configuración local
+
+- No hay servidores MCP compartidos. `.mcp.json` está en `.gitignore`: si alguien usa MCP, lo configura solo en local.
+- Nunca commitear API keys ni tokens. `.claude/settings.local.json` es personal; los ajustes compartidos van en `.claude/settings.json`.
 
 ---
 
@@ -314,6 +323,7 @@ Ubicadas en `/legal/`. Todas comparten estructura y estilos con el sitio princip
 | Rama | Propósito |
 |------|-----------|
 | `main` | Producción |
-| `feature/presskit` | Rama activa — desarrollo del press kit |
+| `develop` | Integración |
+| `feature/<nombre>` | Desarrollo por funcionalidad (p. ej. `feature/presskit`) |
 
-Commits existentes: `a6f392e` (develop - first commit), `1f55998` (Initial commit).
+Formato de commit: `<rama>: descripción` (p. ej. `feature/presskit: añade sección de shows`).
