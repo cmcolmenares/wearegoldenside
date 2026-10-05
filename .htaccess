@@ -1,0 +1,12 @@
+# GoldenSide — URLs limpias para páginas estáticas que no son archivos reales.
+RewriteEngine On
+
+# /registrate (URL anterior), /comunidad y /Comunidad/ (barra final) -> 301 a /Comunidad
+RewriteRule ^registrate/?$ /Comunidad [R=301,L,NC]
+RewriteCond %{REQUEST_URI} !^/Comunidad$
+RewriteRule ^comunidad/?$ /Comunidad [R=301,L,NC]
+
+# /Comunidad -> comunidad.html (sin tocar archivos o directorios existentes)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Comunidad$ comunidad.html [L]

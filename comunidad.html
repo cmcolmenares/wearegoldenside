@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunidad | GoldenSide</title>
+  <meta name="description" content="Únete a la comunidad de GoldenSide con tu nombre y correo para enterarte antes que nadie de música nueva, shows y novedades de GoldenSide.">
+  <meta name="author" content="GoldenSide">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0A0A0A">
+  <link rel="canonical" href="https://wearegoldenside.com/Comunidad">
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="GoldenSide">
+  <meta property="og:title" content="Comunidad | GoldenSide">
+  <meta property="og:description" content="Entérate antes que nadie de música nueva, shows y novedades de GoldenSide.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://wearegoldenside.com/Comunidad">
+  <meta property="og:image" content="https://wearegoldenside.com/assets/images/og-goldenside.jpg">
+  <meta property="og:locale" content="es_ES">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@wearegoldenside">
+  <meta name="twitter:title" content="Comunidad | GoldenSide">
+  <meta name="twitter:description" content="Entérate antes que nadie de música nueva, shows y novedades de GoldenSide.">
+  <meta name="twitter:image" content="https://wearegoldenside.com/assets/images/og-goldenside.jpg">
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon-180x180.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <!-- Structured data: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://wearegoldenside.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Comunidad", "item": "https://wearegoldenside.com/Comunidad" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+@font-face {
+  font-family: 'Progress';
+  src: url('./assets/fonts/progress_3/PROGRESS PERSONAL USE.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --noir: #0A0A0A;
+  --carbon: #1A1A1A;
+  --asphalt: #2D2D2D;
+  --concrete: #4A4A4A;
+  --smoke: #8A8A8A;
+  --bone: #E8E4DF;
+  --chalk: #F5F2ED;
+  --blood: #C41E1E;
+  --ember: #8B1A1A;
+  --gold: #D4A843;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--noir);
+  color: var(--chalk);
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+a { color: inherit; }
+
+.topbar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.topbar__logo {
+  font-family: 'Progress', 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.topbar__back {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--smoke);
+}
+.topbar__back:hover { color: var(--chalk); }
+
+.comunidad {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 84px);
+  display: flex;
+  align-items: center;
+}
+.comunidad__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('./assets/images/mask.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.comunidad__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10,10,10,0.55) 0%,
+    rgba(10,10,10,0.72) 45%,
+    rgba(10,10,10,0.9) 100%
+  );
+  z-index: 1;
+}
+.comunidad__inner {
+  position: relative;
+  z-index: 2;
+  width: min(560px, calc(100% - 64px));
+  margin: 0 auto;
+  padding: 48px 0 80px;
+}
+.comunidad__label {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.65rem;
+  color: rgba(245, 242, 237, 0.85);
+  margin-bottom: 24px;
+}
+.comunidad__label::before {
+  content: '— ';
+  color: rgba(245, 242, 237, 0.6);
+}
+.comunidad__title {
+  font-family: 'Progress', 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--chalk);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+  margin: 0 0 24px;
+}
+.comunidad__text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(245, 242, 237, 0.92);
+  margin: 0 0 40px;
+  max-width: 480px;
+}
+
+.comunidad__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.comunidad__form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.comunidad__label-field {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--smoke);
+}
+.comunidad__input {
+  background: rgba(10,10,10,0.35);
+  border: 1px solid var(--asphalt);
+  color: var(--bone);
+  font-family: 'EB Garamond', serif;
+  font-size: 1rem;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.comunidad__input::placeholder { color: var(--concrete); }
+.comunidad__input:focus { border-color: var(--blood); }
+
+.comunidad__checkbox-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+}
+.comunidad__checkbox-wrap input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border: 1px solid var(--concrete);
+  background: transparent;
+  cursor: pointer;
+  margin-top: 2px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.comunidad__checkbox-wrap input[type="checkbox"]:checked {
+  background: var(--blood);
+  border-color: var(--blood);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%23F5F2ED' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 8px;
+}
+.comunidad__checkbox-wrap input[type="checkbox"]:focus-visible {
+  outline: 1px solid var(--blood);
+  outline-offset: 2px;
+}
+.comunidad__checkbox-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--smoke);
+}
+.comunidad__checkbox-text a { color: var(--bone); text-decoration-color: var(--blood); }
+
+.comunidad__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  padding: 16px 36px;
+  background: var(--blood);
+  color: var(--chalk);
+  border: 1px solid var(--blood);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+.comunidad__submit:hover:not(:disabled) {
+  background: var(--ember);
+  transform: translateY(-1px);
+}
+.comunidad__submit:disabled {
+  background: var(--asphalt);
+  border-color: var(--asphalt);
+  color: var(--smoke);
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+.comunidad__status {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--smoke);
+  margin: 4px 0 0;
+  min-height: 1.2em;
+}
+.comunidad__status--ok { color: var(--gold); }
+.comunidad__status--err { color: var(--blood); }
+
+footer.comunidad-footer {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 24px 32px 32px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--smoke);
+}
+
+/* Honeypot: oculto a usuarios, visible para bots */
+.comunidad__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media (max-width: 560px) {
+  .topbar { padding: 20px; }
+  .comunidad__inner { padding: 24px 0 56px; }
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar__logo" href="/">GoldenSide</a>
+    <a class="topbar__back" href="/">← Volver al inicio</a>
+  </header>
+
+  <main class="comunidad">
+    <div class="comunidad__bg" aria-hidden="true"></div>
+    <div class="comunidad__overlay" aria-hidden="true"></div>
+    <div class="comunidad__inner">
+      <span class="comunidad__label">Comunidad</span>
+      <h1 class="comunidad__title">Sé parte del proceso</h1>
+      <p class="comunidad__text">Déjanos tu nombre y tu correo. Te avisamos primero: música nueva, shows y lo que se viene en la Underground Era.</p>
+
+      <form class="comunidad__form" id="comunidad-form" action="./register.php" method="POST" aria-label="Formulario de registro" novalidate>
+        <div class="comunidad__hp" aria-hidden="true">
+          <label for="rg-website">No rellenar este campo</label>
+          <input type="text" id="rg-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="comunidad__form-group">
+          <label class="comunidad__label-field" for="rg-nombre">Nombre completo</label>
+          <input class="comunidad__input" type="text" id="rg-nombre" name="nombre_completo" placeholder="Tu nombre completo" autocomplete="name" required>
+        </div>
+
+        <div class="comunidad__form-group">
+          <label class="comunidad__label-field" for="rg-correo">Correo</label>
+          <input class="comunidad__input" type="email" id="rg-correo" name="correo" placeholder="tu@email.com" autocomplete="email" required>
+        </div>
+
+        <div class="comunidad__form-group">
+          <label class="comunidad__checkbox-wrap">
+            <input type="checkbox" id="rg-privacidad" name="privacidad" required>
+            <span class="comunidad__checkbox-text">He leído y acepto la <a href="./legal/politica-privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a></span>
+          </label>
+        </div>
+
+        <div class="comunidad__form-group">
+          <button class="comunidad__submit" type="submit" disabled aria-disabled="true">Registrarme</button>
+          <p class="comunidad__status" id="rg-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="comunidad-footer">
+    <p>© 2026 GoldenSide — Todos los derechos reservados</p>
+  </footer>
+
+  <script>
+  (function () {
+    var form = document.getElementById('comunidad-form');
+    var status = document.getElementById('rg-status');
+    if (!form || !status) return;
+
+    var submitBtn = form.querySelector('.comunidad__submit');
+
+    var updateSubmitState = function () {
+      var valid = form.checkValidity();
+      submitBtn.disabled = !valid;
+      submitBtn.setAttribute('aria-disabled', String(!valid));
+    };
+    form.addEventListener('input', updateSubmitState);
+    form.addEventListener('change', updateSubmitState);
+    updateSubmitState();
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (submitBtn.disabled) return;
+
+      var data = new FormData(form);
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+      status.textContent = '';
+      status.className = 'comunidad__status';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (res) {
+          return res.json().then(function (json) {
+            return { ok: res.ok, json: json };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.json && result.json.ok) {
+            status.textContent = 'Listo. Revisa tu correo, te escribimos.';
+            status.classList.add('comunidad__status--ok');
+            form.reset();
+          } else if (result.json && result.json.error === 'duplicate_email') {
+            status.textContent = 'Ese correo ya está registrado.';
+            status.classList.add('comunidad__status--err');
+          } else {
+            throw new Error('server');
+          }
+        })
+        .catch(function () {
+          status.textContent = 'Algo salió mal. Escríbenos a wearegoldenside@gmail.com';
+          status.classList.add('comunidad__status--err');
+        })
+        .finally(function () {
+          submitBtn.textContent = 'Registrarme';
+          updateSubmitState();
+        });
+    });
+  })();
+  </script>
+</body>
+</html>

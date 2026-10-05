@@ -17,10 +17,16 @@ El proyecto está en una etapa creativa denominada **Underground Era (2026)**: m
 ```
 wearegoldenside/
 ├── index.html               — Página principal
+├── comunidad.html           — Página Comunidad (/Comunidad, formulario de registro), standalone como /legal/*.html
 ├── contact.php              — Procesador del formulario de contacto (PHP mail(), IONOS)
+├── register.php             — Procesador del formulario de registro (PDO MySQL + mail())
+├── config.php               — Carga `.env` y expone constantes de BD/email para register.php
+├── .env                     — Credenciales reales de la BD (NO commiteado, ver .env.example)
+├── .env.example             — Plantilla de variables de entorno para register.php
+├── .htaccess                — Reescribe /Comunidad → comunidad.html (+ 301 desde /registrate)
 ├── GoldenSide-PressKit-2026.pdf — Press kit en PDF
 ├── robots.txt               — Configuración para crawlers SEO
-├── sitemap.xml              — Mapa del sitio (4 URLs)
+├── sitemap.xml              — Mapa del sitio (5 URLs)
 ├── site.webmanifest         — Web App Manifest
 ├── README.md                — Documentación general del proyecto
 ├── CLAUDE.md                — Este archivo
@@ -41,9 +47,12 @@ wearegoldenside/
 │   ├── aviso-legal.html
 │   ├── politica-cookies.html
 │   └── politica-privacidad.html
+├── sql/
+│   └── usuarios_registrados.sql — DDL de la tabla de registros (MySQL/MariaDB)
 └── docs/
     ├── presskit_brief.md    — Especificaciones del press kit
-    └── quienesSomos.md      — Texto biográfico del dúo
+    ├── quienesSomos.md      — Texto biográfico del dúo
+    └── comunidad_setup.md   — Guía paso a paso: crear la BD en IONOS y desplegar /Comunidad
 ```
 
 ---
@@ -56,12 +65,13 @@ wearegoldenside/
 | Estilos | CSS3 puro, metodología BEM, custom properties |
 | Scripts | JavaScript vanilla (ES6+), sin frameworks |
 | Tipografía | Google Fonts + fuente local "Progress" |
-| Formularios | `contact.php` (PHP 7.4+/8.x, función `mail()`) |
+| Formularios | `contact.php` y `register.php` (PHP 7.4+/8.x, función `mail()`) |
+| Base de datos | MySQL/MariaDB incluido en el hosting IONOS, vía PDO (solo para `register.php`) |
 | Hosting | IONOS (hosting compartido) |
 | Música | Spotify Embed (iframe) |
 | Video | YouTube Embed (iframe) |
 
-No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS estático; lo único que se ejecuta en servidor es `contact.php`.
+No hay bundler, transpilador ni framework de JavaScript. Todo es HTML/CSS/JS estático; en servidor solo corren `contact.php` y `register.php` (este último además habla con MySQL vía `config.php`).
 
 ---
 
@@ -146,7 +156,7 @@ Módulos funcionales implementados:
 - Idioma: `es_ES`
 - OpenGraph y Twitter Cards configurados
 - Schema.org: `MusicGroup` y `MusicEvent` (JSON-LD)
-- Sitemap en `/sitemap.xml` con 4 URLs (homepage + 3 legales)
+- Sitemap en `/sitemap.xml` con 5 URLs (homepage + /Comunidad + 3 legales)
 - `robots.txt` permite todos los crawlers
 
 ---
@@ -269,10 +279,20 @@ Ubicadas en `/legal/`. Todas comparten estructura y estilos con el sitio princip
 - `MAIL_TO` y `MAIL_FROM` son constantes al inicio del archivo. `MAIL_FROM` debe ser una dirección del dominio creada en IONOS (si no, falla SPF/DKIM).
 - `python3 -m http.server` no ejecuta PHP: en local el formulario no funciona (usar `php -S localhost:5173` para probarlo).
 
+## Comunidad (`comunidad.html` + `register.php`)
+
+- Página standalone en `/Comunidad` (mismo patrón que `/legal/*.html`), reescrita desde `comunidad.html` vía `.htaccess` (mod_rewrite). `/registrate` (URL anterior), `/comunidad` y `/Comunidad/` redirigen con 301 a `/Comunidad`. El backend mantiene sus nombres originales (`register.php`, tabla `usuarios_registrados`). Visualmente reutiliza la estética de `#underground-open` de `index.html` (máscara roja, Progress/Oswald/EB Garamond).
+- Campos: `nombre_completo` (text) y `correo` (email), checkbox de privacidad y honeypot `website`. Solo acepta `POST`; responde JSON igual que `contact.php`.
+- `register.php` inserta en la tabla `usuarios_registrados` (MySQL/MariaDB del hosting, ver `sql/usuarios_registrados.sql`) vía PDO, usando credenciales de `config.php`/`.env`. Si el correo ya existe (`UNIQUE`), responde `422 duplicate_email` en vez de duplicar.
+- Tras insertar con éxito, envía un email de agradecimiento al correo registrado con `mail()` nativo (mismo mecanismo que `contact.php`). Asunto y cuerpo del mensaje están en texto plano, directamente en `register.php` (líneas ~85-97) — editar ahí para cambiar el copy.
+- Guía completa de puesta en marcha (crear la BD en el panel de IONOS, `.env`, subida de archivos) en `docs/comunidad_setup.md`.
+- Exportar los registros a Excel: phpMyAdmin → tabla `usuarios_registrados` → pestaña "Exportar" → CSV (se abre directo en Excel).
+
 ## Secretos y configuración local
 
 - No hay servidores MCP compartidos. `.mcp.json` está en `.gitignore`: si alguien usa MCP, lo configura solo en local.
 - Nunca commitear API keys ni tokens. `.claude/settings.local.json` es personal; los ajustes compartidos van en `.claude/settings.json`.
+- Credenciales de la base de datos: solo en `.env` (no commiteado), nunca hardcodeadas en `config.php`/`register.php`. Ver `.env.example` para las claves esperadas.
 
 ---
 
@@ -313,7 +333,7 @@ Ubicadas en `/legal/`. Todas comparten estructura y estilos con el sitio princip
 - Tono editorial, oscuro, humano — nunca corporativo
 - No usar frases de coaching ni exageraciones sin respaldo
 - El término correcto siempre es **GoldenSide** (sin espacio, sin "we are" en el copy)
-- El sitio web usa **wearegoldenside.com** como dominio
+- **Dominio real en producción hoy: `wearegoldenside.es`** (document root = carpeta `WebGolden` del hosting). `wearegoldenside.com` está registrado en la misma cuenta de IONOS pero sirve actualmente un WordPress distinto en la raíz del hosting — no este proyecto. Es intencional y temporal: el plan es migrar `wearegoldenside.com` a este sitio más adelante (sin fecha fija), y por eso el `canonical`/`og:url`/sitemap/robots.txt del proyecto ya apuntan a `.com` a propósito (el dominio final), no a `.es`. Mientras no se haga la migración, para probar o compartir el sitio en vivo hay que usar `wearegoldenside.es`. Verificado el 2026-10-03.
 
 ---
 

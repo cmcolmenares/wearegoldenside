@@ -49,6 +49,12 @@
     </image:image>
   </url>
   <url>
+    <loc>https://wearegoldenside.com/Comunidad</loc>
+    <lastmod>2026-10-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://wearegoldenside.com/legal/aviso-legal.html</loc>
     <lastmod>2026-05-01</lastmod>
     <changefreq>yearly</changefreq>
