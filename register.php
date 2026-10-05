@@ -95,15 +95,52 @@ $bodyLines = [
     "",
     "— GoldenSide",
 ];
-$body = implode("\n", $bodyLines);
+$textBody = implode("\n", $bodyLines);
+
+// Plantilla HTML opcional. Si existe, se envía multipart/alternative (HTML +
+// el texto plano de arriba como respaldo); si no, se envía solo texto plano.
+// Marcadores disponibles en la plantilla: {{nombre}}, {{correo}}.
+$htmlTemplatePath = __DIR__ . '/templates/email/bienvenida.html';
+$htmlBody = null;
+if (is_readable($htmlTemplatePath)) {
+    $template = file_get_contents($htmlTemplatePath);
+    if ($template !== false && trim($template) !== '') {
+        $htmlBody = strtr($template, [
+            '{{nombre}}' => htmlspecialchars($nombreCompleto, ENT_QUOTES, 'UTF-8'),
+            '{{correo}}' => htmlspecialchars($correoRaw, ENT_QUOTES, 'UTF-8'),
+        ]);
+    }
+}
 
 $fromHeader = sprintf('%s <%s>', MAIL_FROM_NAME, MAIL_FROM);
 $headers = [
     'From: ' . $fromHeader,
     'X-Mailer: PHP/' . phpversion(),
     'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
 ];
+
+if ($htmlBody === null) {
+    $headers[] = 'Content-Type: text/plain; charset=UTF-8';
+    $body = $textBody;
+} else {
+    $boundary = 'gs_' . bin2hex(random_bytes(12));
+    $headers[] = 'Content-Type: multipart/alternative; boundary="' . $boundary . '"';
+    // Base64 por parte: evita el límite de 998 caracteres por línea de SMTP en el HTML.
+    $body = implode("\r\n", [
+        '--' . $boundary,
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: base64',
+        '',
+        chunk_split(base64_encode($textBody)),
+        '--' . $boundary,
+        'Content-Type: text/html; charset=UTF-8',
+        'Content-Transfer-Encoding: base64',
+        '',
+        chunk_split(base64_encode($htmlBody)),
+        '--' . $boundary . '--',
+        '',
+    ]);
+}
 $additionalParams = '-f' . MAIL_FROM;
 
 // El registro en BD ya se guardó: si el email falla, no bloqueamos la respuesta de éxito.

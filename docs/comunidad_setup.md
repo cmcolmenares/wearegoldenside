@@ -65,6 +65,8 @@ Sube a la raíz del sitio (mismo nivel que `index.html`):
 - `comunidad.html`
 - `register.php`
 - `config.php`
+- `templates/email/bienvenida.html` (opcional: plantilla HTML del email; sin
+  ella se envía en texto plano)
 - `.htaccess` (si ya tienes uno en el servidor, añade solo el bloque de la
   reglas de `/Comunidad`, no lo sobrescribas)
 - `.env` (creado en el paso 3, nunca el `.env.example`)
@@ -98,3 +100,17 @@ Si en el servidor ya estaba desplegada la versión anterior (`/registrate`):
 
 `register.php`, `config.php`, `.env` y la tabla `usuarios_registrados` no
 cambian: los registros existentes se conservan.
+
+## 8. Plantilla HTML del email de bienvenida
+
+`register.php` usa `templates/email/bienvenida.html` si existe en el servidor.
+Si no está, sigue enviando el email en texto plano, así que la plantilla se
+puede añadir en cualquier momento sin tocar código.
+
+- Marcadores que se reemplazan: `{{nombre}}` y `{{correo}}`.
+- Usa estilos inline (`style="..."`) y tablas para el layout: muchos clientes
+  de correo (Gmail, Outlook) ignoran `<style>` y CSS moderno.
+- Imágenes con URL absoluta (`https://wearegoldenside.es/assets/...`), nunca
+  rutas relativas.
+- El texto plano de `register.php` se sigue enviando como respaldo para los
+  clientes que no muestran HTML.

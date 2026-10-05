@@ -47,6 +47,9 @@ wearegoldenside/
 │   ├── aviso-legal.html
 │   ├── politica-cookies.html
 │   └── politica-privacidad.html
+├── templates/
+│   └── email/
+│       └── bienvenida.html  — Plantilla HTML del email de bienvenida (opcional, aún no creada)
 ├── sql/
 │   └── usuarios_registrados.sql — DDL de la tabla de registros (MySQL/MariaDB)
 └── docs/
@@ -284,7 +287,8 @@ Ubicadas en `/legal/`. Todas comparten estructura y estilos con el sitio princip
 - Página standalone en `/Comunidad` (mismo patrón que `/legal/*.html`), reescrita desde `comunidad.html` vía `.htaccess` (mod_rewrite). `/registrate` (URL anterior), `/comunidad` y `/Comunidad/` redirigen con 301 a `/Comunidad`. El backend mantiene sus nombres originales (`register.php`, tabla `usuarios_registrados`). Visualmente reutiliza la estética de `#underground-open` de `index.html` (máscara roja, Progress/Oswald/EB Garamond).
 - Campos: `nombre_completo` (text) y `correo` (email), checkbox de privacidad y honeypot `website`. Solo acepta `POST`; responde JSON igual que `contact.php`.
 - `register.php` inserta en la tabla `usuarios_registrados` (MySQL/MariaDB del hosting, ver `sql/usuarios_registrados.sql`) vía PDO, usando credenciales de `config.php`/`.env`. Si el correo ya existe (`UNIQUE`), responde `422 duplicate_email` en vez de duplicar.
-- Tras insertar con éxito, envía un email de agradecimiento al correo registrado con `mail()` nativo (mismo mecanismo que `contact.php`). Asunto y cuerpo del mensaje están en texto plano, directamente en `register.php` (líneas ~85-97) — editar ahí para cambiar el copy.
+- Tras insertar con éxito, envía un email de agradecimiento al correo registrado con `mail()` nativo (mismo mecanismo que `contact.php`). Asunto y texto plano están directamente en `register.php` (bloque "Email de agradecimiento").
+- Plantilla HTML opcional en `templates/email/bienvenida.html`: si existe, el correo se envía como `multipart/alternative` (HTML + texto plano de respaldo); si no existe, solo texto plano. Marcadores: `{{nombre}}` y `{{correo}}` (se escapan con `htmlspecialchars`). Usar estilos inline y URLs absolutas para imágenes (los clientes de correo ignoran `<style>` externos y rutas relativas).
 - Guía completa de puesta en marcha (crear la BD en el panel de IONOS, `.env`, subida de archivos) en `docs/comunidad_setup.md`.
 - Exportar los registros a Excel: phpMyAdmin → tabla `usuarios_registrados` → pestaña "Exportar" → CSV (se abre directo en Excel).
 
